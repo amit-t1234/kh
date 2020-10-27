@@ -16,7 +16,8 @@
 		$company_register = ($company_name) ? 1: 0;
 		$nature = $_POST['nature'];						
 		$incorporated_on = $_POST['incorporated_on'];						
-		$founder_count = $_POST['founder_count'];						
+		$founder_count = $_POST['founder_count'];
+		$profile_brief = $_POST['profile_brief'];						
 		$heard_from = $_POST['heard_from'];						
 		$part = $_POST['part'];						
 		$hold = $_POST['hold'];						
@@ -35,11 +36,11 @@
 		$average_billing = $_POST['average_billing'];						
 		$revenue = $_POST['revenue'];						
 		$profit = $_POST['profit'];						
-
+		print_r($profile_brief[0]);
 
 		// check the inputs
 		// check for empty fields
-		if (empty($aadhar_number) || empty($first_name) || empty($last_name) || empty($dob) || empty($gender) || empty($email) || empty($phone) || empty($$apply_for)) {
+		if (empty($aadhar_number) || empty($first_name) || empty($last_name) || empty($dob) || empty($gender) || empty($email) || empty($phone) || empty($apply_for)) {
 			header("Location: ../signup.php?signup=503");
 			exit();
 		} else {
@@ -47,21 +48,26 @@
 			try {
 				$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, apply_for, company_register) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 				$stmt->bind_param("sssssssssi", $aadhar_number, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $apply_for, $company_register);
-				$stmt->execute();
+				if ($stmt->execute()) {
+					exit();
+					$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, company_name, nature, incorporated_on, founder_count) VALUES (?, ?, ?, ?, ?)");
+					$stmt->bind_param("ssssi", $aadhar_number, $company_name, $nature, $incorporated_on, $founder_count);
+					if ($stmt->execute()) {
+						echo 'yes';
+					} else {
+						echo 'No2';
+					}				
+				}
+				else 
+					echo 'No1';
 				$stmt->close();
 			} catch(Exception $e) {
 				if($mysqli->errno === 1062) {
-					header("Location: ../signup.php?signup=504");
+					echo $e;
+					// header("Location: ../signup.php?signup=504");
 					exit();
 				}
-			}				
-			if(mysqli_query($connect, $query)) {
-				header("Location: ../");
-				exit();
-			} else {
-				header("Location: ../signup.php?success=0");
-				exit();
-			}		
+			}					
 		}
 	} else {
 		header("Location: ../signup.php?signup=0");
