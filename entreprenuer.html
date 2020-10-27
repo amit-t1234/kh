@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
+
+#grad1 {
+    background-color: : #9C27B0;
+    background-image: linear-gradient(120deg, #FF4081, #81D4FA)
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset .form-card {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px 40px 30px 40px;
+    box-sizing: border-box;
+    width: 94%;
+    margin: 0 3% 20px 3%;
+    position: relative
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform fieldset .form-card {
+    text-align: left;
+    color: #9E9E9E
+}
+
+#msform input,
+#msform textarea {
+    padding: 0px 8px 4px 8px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+   
+    color: #2C3E50;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none;
+    font-weight: bold;
+    border-bottom: 2px solid skyblue;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: skyblue;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+}
+
+select.list-dt {
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    padding: 2px 5px 3px 5px;
+    margin: 2px
+}
+
+select.list-dt:focus {
+    border-bottom: 2px solid skyblue
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    border-radius: 0.5rem;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #000000
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f023"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f09d"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: skyblue
+}
+
+.radio-group {
+    position: relative;
+    margin-bottom: 25px
+}
+
+.radio {
+    display: inline-block;
+    width: 204;
+    height: 104;
+    border-radius: 0;
+    background: lightblue;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 8px 2px
+}
+
+.radio:hover {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3)
+}
+
+.radio.selected {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+</style>
+<body>
+<!------ Include the above in your HEAD tag ---------->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">KnH</a>
+  </nav>
+<!-- MultiStep Form -->
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Sign Up Your Entreprenuer Account</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="account"><strong>Introduction</strong></li>
+                                <li id="personal"><strong>About Business</strong></li>
+                                <li id="payment"><strong>Other Infomration</strong></li>
+                                <li id="confirm"><strong>Attachments</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Introduction</h2> 
+                                    <input type="text" name="fname" placeholder="First Name" /> 
+                                    <input type="text" name="lname" placeholder="Last Name" /> 
+                                    <label>Date of Birth</label><br>
+                                    <input type="date" name="dob" placeholder="Date of Birth Name" />
+                                    <Label>Gender</Label><br>
+                                    <select>
+                                        <option selected>Male</option>
+                                        <option>Female</option>
+                                    </select><br><br>
+                                    <input type="email" name="email" placeholder="Email Id" /> 
+                                    <input type="number" name="pmobilenumber" placeholder="Mobile Number" /> 
+                                    <input type="number" name="lmobilenumber" placeholder="Alternative Mobile Number" /> 
+                                    <input type="number" name="aadhar" placeholder="Aadhar Card Number" />
+                                    <input type="text" name="address" placeholder="Address" />  
+                                    <br>
+                                    <input type="text" name="company" placeholder="Company Name" />  
+                                    <input type="text" name="nature" placeholder="Nature of Company" />  
+                                    <label>Incorporation Date</label><br>
+                                    <input type="date" name="incDate" placeholder="Icorporated On" />
+                                    <br>
+                                    <input type="number" name="founder" placeholder="Number of Founders" /> 
+                                    <input type="text" name="Brief" placeholder="Brief about them" />     
+                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card"><h2>About Business</h2> <br>
+                                    <label>Select relevant Sector</label><br>
+                                    <select>
+                                        <option>A</option>
+                                    </select><br><br>
+                                    <label>Business Category</label><br>
+                                    <select>
+                                        <option>A</option>
+                                    </select><br><br>
+                                    <label>Define Your Idea</label>
+                                    <textarea type="text" name="idea" placeholder="Define Business Idea"> </textarea><br>
+                                    <label>Your Business is trying to solve</label>
+                                    <textarea type="text" name="solve" placeholder="Solving"> </textarea><br>
+
+                                    <label>How are ypu solving it</label>
+                                    <textarea type="text" name="how" placeholder="Define Business Idea"> </textarea><br>
+
+                                    <label>What are your business competitors</label>
+                                    <textarea type="text" name="comp" placeholder="Define Business Idea"> </textarea><br>
+                                    <label>Define Your Revenue Model</label>
+                                    <textarea type="text" name="revenue" placeholder="Define Business Idea"> </textarea><br>
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                          <tr>
+                                            <th>Numbers</th>
+                                            <th>FY 20-21</th>
+                                            <th>FY 19-20</th>
+                                            <th>FY 18-19</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>Customer Count</td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                          </tr>
+                                          <tr>
+                                            <td>Average Billing per Customer</td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                          </tr>
+                                          <tr>
+                                            <td>Revenues</td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                          </tr>
+                                          <tr>
+                                            <td>Profit/Loss</td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                            <td><input type="number"></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <input type="text" name="Brief" placeholder="Last funding raised through" /> 
+                                      <input type="number" name="require" placeholder="Funding needed from Kuberan House" />  
+                                      <input type="number" name="offer" placeholder="Share Ratio Offered" />    
+
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Other Information</h2>
+                                    <label>From where did you hear about us</label>
+                                    <textarea type="text" name="source" placeholder="Heard"> </textarea><br>
+                                    <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
+                                    <textarea type="text" name="part" placeholder="part"> </textarea><br>
+                                    <label>  DO YOU HOLD THE IP/PATENT/TRADEMARK/COPYRIGHTS FOR YOUR IDEA/PRODUCT</label>
+                                    <textarea type="text" name="part" placeholder="part"> </textarea><br>
+                                   
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Confirm" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title text-center">Attachments </h2> <br><br>
+                                    <label>Pitch Deck </label><br>
+                                    <input type="file" name="pitchDeck" placeholder="pitch Deck"/>
+                                    <label>Video </label><br>
+                                    <input type="file" name="video" placeholder="Video"/>
+                                    <label>Business Images</label>
+                                    <input type="file" name="images" placeholder="Business Images"/>
+                                    <label>  Why you should be shortlisted</label>
+                                    <textarea type="text" name="why" placeholder="why"> </textarea><br>
+                                    <input type="checkbox" />Terms and Conditions<br>
+                                    <button class="btn btn-success">Submit</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>         
+</body>
+<script>
+    $(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$('.radio-group .radio').click(function(){
+$(this).parent().find('.radio').removeClass('selected');
+$(this).addClass('selected');
+});
+
+$(".submit").click(function(){
+return false;
+})
+
+});
+</script>
+</html>
