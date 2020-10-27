@@ -293,12 +293,43 @@ select.list-dt:focus {
                                     <input type="number" name="aadhar" placeholder="Aadhar Card Number" />
                                     <input type="text" name="address" placeholder="Address" />  
                                     <br>
-                                    <input type="text" name="company" placeholder="Company Name" />  
-                                    <input type="text" name="nature" placeholder="Nature of Company" />  
+                                    <Label>Applying For</Label><br>
+                                    <select>
+                                        <option selected>SELF</option>
+                                        <option>COFOUNDER</option>
+                                        <option>EMPLOYER</option>
+                                        <option> FRIEND</option>
+                                        <option>FAMILY</option>
+                                        <option> OTHER</option>
+                                    </select><br><br>
+                                    <input type="text" name="company" placeholder="Company Name" />
+                                    <Label>Nature of the Company</Label><br>
+                                    <select>
+                                        <option selected>PRIVATE LIMITED</option>
+                                        <option>LIMITED </option>
+                                        <option>LLP</option>
+                                        <option>PARTNERSHIP FIRM</option>
+                                        <option>SOLE PROPRIETOR</option>
+                                        <option>NOT REGISTERED</option>
+                                        <option>Other</option>
+                                    </select><br><br>
+                          
+
                                     <label>Incorporation Date</label><br>
                                     <input type="date" name="incDate" placeholder="Icorporated On" />
                                     <br>
-                                    <input type="number" name="founder" placeholder="Number of Founders" /> 
+                                    
+                                    <Label>Number of Partners</Label><br>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option> 5</option>
+                                        <option> 5+</option>
+                                    </select><br><br>
+                          
+
                                     <input type="text" name="Brief" placeholder="Brief about them" />     
                                 </div> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -306,11 +337,33 @@ select.list-dt:focus {
                                 <div class="form-card"><h2>About Business</h2> <br>
                                     <label>Select relevant Sector</label><br>
                                     <select>
-                                        <option>A</option>
+                                        <option>AGRICULTURE</option>
+                                        <option>AUTO & TRANSPORTATION</option>
+                                        <option>CLEANTECH</option>
+                                        <option>CONSUMER</option>
+                                        <option>EDUCATION</option>
+                                        <option>HARDWARE</option>
+                                        <option> FOOD</option>
+                                        <option>FASHION</option>
+                                        <option>FINTECH</option>
+                                        <option>LIFESCIENCES</option>
+                                        <option>MANUFACTURING</option>
+                                        <option> MEDIA </option>
+                                        <option>REAL ESTATE</option>
+                                        <option>SERVICES</option>
+                                        <option>LOGISTICS</option>
+                                        <option>TECH/SOFTWARE</option>
+                                        <option>RETAIL</option>
+                                        <option>AUTOMATION</option>
+                                        <option>OTHERS</option>
                                     </select><br><br>
                                     <label>Business Category</label><br>
                                     <select>
-                                        <option>A</option>
+                                        <option>B2B ( Transaction/Business between Wholesale & Retailer)</option>
+                                        <option>B2C( Selling Products & services directly to consumers/End users)</option>
+                                        <option>B2B2C ( Both of the Above)</option>
+                                        <option>D2C ( Direct to Customer)</option>
+                                        <option>OTHER</option>
                                     </select><br><br>
                                     <label>Define Your Idea</label>
                                     <textarea type="text" name="idea" placeholder="Define Business Idea"> </textarea><br>
@@ -361,7 +414,15 @@ select.list-dt:focus {
                                           </tr>
                                         </tbody>
                                       </table>
-                                      <input type="text" name="Brief" placeholder="Last funding raised through" /> 
+                                      <label>Letest funds raised through</label><br>
+                                    <select>
+                                        <option>BOOTSTRAPPED</option>
+                                        <option>SEED FUNDING</option>
+                                        <option>ANGEL FUNDING</option>
+                                        <option>PRESERIES A</option>
+                                        <option>SERIES A</option>
+                                        <option>SERIES A & ABOVE</option>
+                                    </select><br><br>
                                       <input type="number" name="require" placeholder="Funding needed from Kuberan House" />  
                                       <input type="number" name="offer" placeholder="Share Ratio Offered" />    
 
@@ -373,9 +434,15 @@ select.list-dt:focus {
                                     <label>From where did you hear about us</label>
                                     <textarea type="text" name="source" placeholder="Heard"> </textarea><br>
                                     <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
-                                    <textarea type="text" name="part" placeholder="part"> </textarea><br>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select><br>
                                     <label>  DO YOU HOLD THE IP/PATENT/TRADEMARK/COPYRIGHTS FOR YOUR IDEA/PRODUCT</label>
-                                    <textarea type="text" name="part" placeholder="part"> </textarea><br>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select><br>
                                    
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Confirm" />
                             </fieldset>
