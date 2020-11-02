@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entreprenuer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.png" sizes="26x26" type="image/png">
+  <link rel="stylesheet" href="css/LineIcons.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+ 
+<body class="body-back">
+<!------ Include the above in your HEAD tag ---------->
+<nav class="navbar navbar-expand-md navbar-light"> 
+    <div class="container-fluid">
+    <a class="navbar-brand" href="index.html" target="_blank"><img src="img/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto py-4 py-md-0">
+          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active"> <a class="nav-link" href="#" role="button" aria-haspopup="true">Home</a> </li>
+          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"> <a class="nav-link" href="about.html">About Us</a> </li>
+          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"> <a class="nav-link" href="team.html">Our Team</a> </li>
+          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"> <a class="nav-link" href="contact.html">Contact Us</a> </li>
+          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"> <a class="nav-link apply_nav" href="your_dream.html">Apply Your Dream</a> </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+<!-- MultiStep Form -->
+<div class="container-fluid">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3 shadow text-color-style" style="background-color: black;">
+                <h2><strong class="heading-style">Sign Up Your Ideator Account</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="account"><strong>Introduction</strong></li>
+                                <li id="personal"><strong>About Business</strong></li>
+                                <li id="payment"><strong>Other Infomration</strong></li>
+                                <li id="confirm"><strong>Attachments</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Introduction</h2> 
+                                    <label>First Name</label>
+                                    <input type="text" name="fname" placeholder="First Name" /> 
+                                    <label>Last Name</label>
+                                    <input type="text" name="lname" placeholder="Last Name" /> 
+                                    <label>Date of Birth</label><br>
+                                    <input type="date" name="dob" placeholder="Date of Birth Name" />
+                                    <Label>Gender</Label><br>
+                                    <select>
+                                        <option selected>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select><br><br>
+                                    <label>Email ID</label>
+                                    <input type="email" name="email" placeholder="Email Id" /> 
+                                    <label>Mobile Number</label>
+                                    <input type="number" name="pmobilenumber" placeholder="Mobile Number" /> 
+                                    <label>Alternative Mobile Number</label>
+                                    <input type="number" name="lmobilenumber" placeholder="Alternative Mobile Number" /> 
+                                    <label>Aadhar Card</label>
+                                    <input type="number" name="aadhar" placeholder="Aadhar Card Number" /><br>
+                                    <label>Aadhar Card Image</label><br>
+                                    <input type="file" name="aadharfile" placeholder="aadhar file" />
+                                    <label>Address</label>
+                                    <input type="text" name="address" placeholder="Address" />  
+                                    <br>
+                                    <Label>Applying For</Label><br>
+                                    <select>
+                                        <option selected>SELF</option>
+                                        <option>COFOUNDER</option>
+                                        <option>EMPLOYER</option>
+                                        <option> FRIEND</option>
+                                        <option>FAMILY</option>
+                                        <option> OTHER</option>
+                                    </select><br><br>
+                                    <input type="text" name="company" placeholder="Company Name" />  
+                                    <Label>Nature of the Company</Label><br>
+                                    <select>
+                                        <option selected>PRIVATE LIMITED</option>
+                                        <option>LIMITED </option>
+                                        <option>LLP</option>
+                                        <option>PARTNERSHIP FIRM</option>
+                                        <option>SOLE PROPRIETOR</option>
+                                        <option>NOT REGISTERED</option>
+                                        <option>Other</option>
+                                    </select><br><br> 
+                                    <label>Incorporation Date</label><br>
+                                    <input type="date" name="incDate" placeholder="Icorporated On" />
+                                    <br>
+                                    <Label>Number of Partners</Label><br>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option> 5</option>
+                                        <option> 5+</option>
+                                    </select><br><br>
+                                    <label>Brief about them</label>
+                                    <input type="text" name="Brief" placeholder="Brief about them" />     
+                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card"><h2>About Business</h2> <br>
+                                    <label>Select relevant Sector</label><br>
+                                    <select>
+                                        <option>AGRICULTURE</option>
+                                        <option>AUTO & TRANSPORTATION</option>
+                                        <option>CLEANTECH</option>
+                                        <option>CONSUMER</option>
+                                        <option>EDUCATION</option>
+                                        <option>HARDWARE</option>
+                                        <option> FOOD</option>
+                                        <option>FASHION</option>
+                                        <option>FINTECH</option>
+                                        <option>LIFESCIENCES</option>
+                                        <option>MANUFACTURING</option>
+                                        <option> MEDIA </option>
+                                        <option>REAL ESTATE</option>
+                                        <option>SERVICES</option>
+                                        <option>LOGISTICS</option>
+                                        <option>TECH/SOFTWARE</option>
+                                        <option>RETAIL</option>
+                                        <option>AUTOMATION</option>
+                                        <option>OTHERS</option>
+                                    </select><br><br>
+                                    <label>Business Category</label><br>
+                                    <select>
+                                        <option>B2B ( Transaction/Business between Wholesale & Retailer)</option>
+                                        <option>B2C( Selling Products & services directly to consumers/End users)</option>
+                                        <option>B2B2C ( Both of the Above)</option>
+                                        <option>D2C ( Direct to Customer)</option>
+                                        <option>OTHER</option>
+                                    </select><br><br>
+                                    <label>Define Your Idea</label>
+                                    <textarea type="text" name="idea" placeholder="Define Business Idea"> </textarea><br>
+                                    <label>Your Business is trying to solve</label>
+                                    <textarea type="text" name="solve" placeholder="Solving"> </textarea><br>
+
+                                    <label>How are ypu solving it</label>
+                                    <textarea type="text" name="how" placeholder="Define Business Idea"> </textarea><br>
+
+                                    <label>What are your business competitors</label>
+                                    <textarea type="text" name="comp" placeholder="Define Business Idea"> </textarea><br>
+                                    <label>Define Your Revenue Model</label>
+                                    <textarea type="text" name="revenue" placeholder="Define Business Idea"> </textarea><br>
+
+                                    <label>Funding Needed</label>
+                                      <input type="number" name="require" placeholder="Funding needed from Kuberan House" />  
+                                      <label>Share Offered</label>
+                                      <input type="number" name="offer" placeholder="Share Ratio Offered" />    
+
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Other Information</h2>
+                                    <label>From where did you hear about us</label>
+                                    <textarea type="text" name="source" placeholder="Heard"> </textarea><br>
+                                    <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select><br>
+                                    <label>  DO YOU HOLD THE IP/PATENT/TRADEMARK/COPYRIGHTS FOR YOUR IDEA/PRODUCT</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select><br>
+                                   
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Confirm" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title text-center">Attachments </h2> <br><br>
+                                    <label>Pitch Deck </label><br>
+                                    <input type="file" name="pitchDeck" placeholder="pitch Deck"/>
+                                    <label>Video </label><br>
+                                    <input type="file" name="video" placeholder="Video"/>
+                                    <label>Business Images</label>
+                                    <input type="file" name="images" placeholder="Business Images"/>
+                                    <label>  Why you should be shortlisted</label>
+                                    <textarea type="text" name="why" placeholder="why"> </textarea><br>
+                                    <input type="checkbox" />Terms and Conditions<br>
+                                    <button class="btn_snd">Submit &nbsp;<i class="lni lni-telegram-original"></i></button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>         
+</body>
+<script>
+    $(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$('.radio-group .radio').click(function(){
+$(this).parent().find('.radio').removeClass('selected');
+$(this).addClass('selected');
+});
+
+$(".submit").click(function(){
+return false;
+})
+
+});
+</script>
+</html>
