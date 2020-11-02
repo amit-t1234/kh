@@ -68,10 +68,16 @@
           <span>Applications</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="moderators.html">
+        <a class="nav-link" href="moderators.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Moderators</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="score.php">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Score</span></a>
+      </li>
+
 
     
 

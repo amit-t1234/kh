@@ -258,121 +258,7 @@
               </div>
             </div>
           </div>
-
-          <!-- Content Row -->
-          <div>
-            Toggle column: 
-            <br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="0" type="checkbox" id="inlineCheckbox0" value="option1" checked>
-              <label class="form-check-labe" for="inlineCheckbox0">Aadhar Number</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="1" type="checkbox" id="inlineCheckbox1" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox1">Name</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="2" type="checkbox" id="inlineCheckbox2" value="option1">
-              <label class="form-check-label" for="inlineCheckbox2">Dob</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="3" type="checkbox" id="inlineCheckbox3" value="option1">
-              <label class="form-check-label" for="inlineCheckbox3">Gender</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="4" type="checkbox" id="inlineCheckbox4" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox4">Email</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="5" type="checkbox" id="inlineCheckbox5" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox5">Phone Number</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="6" type="checkbox" id="inlineCheckbox6" value="option1">
-              <label class="form-check-label" for="inlineCheckbox6">Second Phone Number</label>
-            </div><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="7" type="checkbox" id="inlineCheckbox7" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox7">Company Name</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="8" type="checkbox" id="inlineCheckbox8" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox8">Nature</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="9" type="checkbox" id="inlineCheckbox9" value="option1">
-              <label class="form-check-label" for="inlineCheckbox9">Incorporated On</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="10" type="checkbox" id="inlineCheckbox10" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox10">Founder Count</label>
-            </div><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="11" type="checkbox" id="inlineCheckbox11" value="option1">
-              <label class="form-check-label" for="inlineCheckbox11">Pitch Deck</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="12" type="checkbox" id="inlineCheckbox12" value="option1">
-              <label class="form-check-label" for="inlineCheckbox12">Aadhar Image</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="13" type="checkbox" id="inlineCheckbox13" value="option1">
-              <label class="form-check-label" for="inlineCheckbox13">Videos</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="14" type="checkbox" id="inlineCheckbox14" value="option1">
-              <label class="form-check-label" for="inlineCheckbox14">Images</label>
-            </div><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="15" type="checkbox" id="inlineCheckbox15" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox15">Sector</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="16" type="checkbox" id="inlineCheckbox16" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox16">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="17" type="checkbox" id="inlineCheckbox17" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox17">Idea</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="18" type="checkbox" id="inlineCheckbox18" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox18">Solution To?</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="19" type="checkbox" id="inlineCheckbox19" value="option1">
-              <label class="form-check-label" for="inlineCheckbox19">How It Solves?</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="20" type="checkbox" id="inlineCheckbox20" value="option1">
-              <label class="form-check-label" for="inlineCheckbox20">Competitors?</label>
-            </div><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="21" type="checkbox" id="inlineCheckbox21" value="option1">
-              <label class="form-check-label" for="inlineCheckbox21">Last Funding</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="22" type="checkbox" id="inlineCheckbox22" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox22">Revenue</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="23" type="checkbox" id="inlineCheckbox23" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox23">Fund Needed From Us</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="24" type="checkbox" id="inlineCheckbox24" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox24">Share</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input toggle-vis" data-column="25" type="checkbox" id="inlineCheckbox25" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox25">Score</label>
-            </div>
-        </div>
-
-          <!-- Content Row -->
-                   <!-- Page Heading -->
-                  
-                   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Ideators</a>
                     </li>
@@ -381,6 +267,122 @@
                     </li>
                  
                   </ul>
+          <!-- Content Row -->
+          <div>
+            <div class="filters text-right" style="margin-top: -45px;"><a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-filter"></i> &nbsp; Filters </a></div>
+            <br>
+            <div class="collapse row" style="padding: 0px 30px 20px 30px;" id="collapseExample">
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="0" type="checkbox" id="inlineCheckbox0" value="option1" checked>
+              <label class="form-check-labe" for="inlineCheckbox0">Aadhar Number</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="1" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox1">Name</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="2" type="checkbox" id="inlineCheckbox2" value="option1">
+              <label class="form-check-label" for="inlineCheckbox2">Dob</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="3" type="checkbox" id="inlineCheckbox3" value="option1">
+              <label class="form-check-label" for="inlineCheckbox3">Gender</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="4" type="checkbox" id="inlineCheckbox4" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox4">Email</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="5" type="checkbox" id="inlineCheckbox5" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox5">Phone Number</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="6" type="checkbox" id="inlineCheckbox6" value="option1">
+              <label class="form-check-label" for="inlineCheckbox6">Second Phone Number</label>
+            </div><br>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="7" type="checkbox" id="inlineCheckbox7" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox7">Company Name</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="8" type="checkbox" id="inlineCheckbox8" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox8">Nature</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="9" type="checkbox" id="inlineCheckbox9" value="option1">
+              <label class="form-check-label" for="inlineCheckbox9">Incorporated On</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="10" type="checkbox" id="inlineCheckbox10" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox10">Founder Count</label>
+            </div><br>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="11" type="checkbox" id="inlineCheckbox11" value="option1">
+              <label class="form-check-label" for="inlineCheckbox11">Pitch Deck</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="12" type="checkbox" id="inlineCheckbox12" value="option1">
+              <label class="form-check-label" for="inlineCheckbox12">Aadhar Image</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="13" type="checkbox" id="inlineCheckbox13" value="option1">
+              <label class="form-check-label" for="inlineCheckbox13">Videos</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="14" type="checkbox" id="inlineCheckbox14" value="option1">
+              <label class="form-check-label" for="inlineCheckbox14">Images</label>
+            </div><br>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="15" type="checkbox" id="inlineCheckbox15" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox15">Sector</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="16" type="checkbox" id="inlineCheckbox16" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox16">Category</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="17" type="checkbox" id="inlineCheckbox17" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox17">Idea</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="18" type="checkbox" id="inlineCheckbox18" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox18">Solution To?</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="19" type="checkbox" id="inlineCheckbox19" value="option1">
+              <label class="form-check-label" for="inlineCheckbox19">How It Solves?</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="20" type="checkbox" id="inlineCheckbox20" value="option1">
+              <label class="form-check-label" for="inlineCheckbox20">Competitors?</label>
+            </div><br>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="21" type="checkbox" id="inlineCheckbox21" value="option1">
+              <label class="form-check-label" for="inlineCheckbox21">Last Funding</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="22" type="checkbox" id="inlineCheckbox22" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox22">Revenue</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="23" type="checkbox" id="inlineCheckbox23" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox23">Fund Needed From Us</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="24" type="checkbox" id="inlineCheckbox24" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox24">Share</label>
+            </div>
+            <div class="form-check form-check-inline col-md-4 mx-0">
+              <input class="form-check-input toggle-vis" data-column="25" type="checkbox" id="inlineCheckbox25" value="option1" checked>
+              <label class="form-check-label" for="inlineCheckbox25">Score</label>
+            </div>
+            </div>
+        </div>
+
+          <!-- Content Row -->
+                   <!-- Page Heading -->
+                  
+
                   <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         <!-- DataTales Example -->
