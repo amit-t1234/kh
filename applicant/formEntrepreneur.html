@@ -49,14 +49,14 @@
                             <ul id="progressbar">
                                 <li class="active" id="account"><strong>Introduction</strong></li>
                                 <li id="personal"><strong>About Business</strong></li>
-                                <li id="payment"><strong>Other Infomration</strong></li>
+                                <li id="payment"><strong>Other Information</strong></li>
                                 <li id="confirm"><strong>Attachments</strong></li>
                             </ul> <!-- fieldsets -->
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">Introduction</h2>
-                                    <Label>Who are you?</Label><br>
-                                    <div class="row">
+                                    
+                                    <div class="row" style="display: none;">
                                         <div class="col-6">
                                             <div class="form-check form-check-inline">
                                               <input class="form-check-input my-auto" style="width: auto;" type="radio" name="type" id="exampleRadios1" value="entreprenuer" checked>
@@ -94,8 +94,16 @@
                                     <input type="number" name="phone2" placeholder="Alternative Mobile Number" /> 
                                     <label>Aadhar Card Number</label>
                                     <input type="number" name="aadhar_number" placeholder="Aadhar Card Number" />
-                                    <label>Address</label>
-                                    <input type="text" name="address" placeholder="Address" />  
+                                    <label>Flat Number</label>
+                                    <input type="text" name="flat" placeholder="Flat" />  
+                                    <label>Street Name</label>
+                                    <input type="text" name="street" placeholder="Street" />  
+                                    <label>Area</label>
+                                    <input type="text" name="area" placeholder="Area" />  
+                                    <label>City</label>
+                                    <input type="text" name="city" placeholder="City" />  
+                                    <label>State</label>
+                                    <input type="text" name="state" placeholder="State" />  
                                     <br>
                                     <Label>Applying For</Label><br>
                                     <select name="apply_for">
@@ -131,7 +139,7 @@
                                         <option value="6"> 5+</option>
                                     </select><br><br>
                           
-
+                                    <Label>Brief about Partners</Label><br>
                                     <textarea name="profile_brief[0]" placeholder="Brief about them"></textarea>     
                                 </div> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -168,22 +176,22 @@
                                         <option value="other">OTHER</option>
                                     </select><br><br>
                                     <label>Define Your Idea</label>
-                                    <textarea type="text" name="idea" placeholder="Define Business Idea"> </textarea><br>
+                                    <textarea type="text" name="idea" placeholder="Define Business Idea (100 Words Only)"></textarea><br>
                                     <label>Your Business is trying to solve</label>
-                                    <textarea type="text" name="solution_to" placeholder="Solving"> </textarea><br>
+                                    <textarea type="text" name="solution_to" placeholder="Solving (100 Words Only)"></textarea><br>
 
                                     <label>How are you solving it</label>
-                                    <textarea type="text" name="your_solution" placeholder="Define Business Idea"> </textarea><br>
+                                    <textarea type="text" name="your_solution" placeholder="Define Business Idea (100 Words Only)"></textarea><br>
 
                                     <label>What are your business competitors</label>
-                                    <textarea type="text" name="competitors" placeholder="Define Business Idea"> </textarea><br>
+                                    <textarea type="text" name="competitors" placeholder="Define Business Idea (100 Words Only)"> </textarea><br>
                                     <label>Define Your Revenue Model</label>
-                                    <textarea type="text" name="revenue" placeholder="Define Business Idea"> </textarea><br>
+                                    <textarea type="text" name="revenue" placeholder="Define Business Idea (100 Words Only)"> </textarea><br>
 
                                     <table class="table table-striped">
                                         <thead>
                                           <tr>
-                                            <th>Numbers</th>
+                                            <th>Numbers<br> <small>INR (in Lakhs only)</small></th>
                                             <th>FY 20-21</th>
                                             <th>FY 19-20</th>
                                             <th>FY 18-19</th>
@@ -234,7 +242,7 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Other Information</h2>
                                     <label>From where did you hear about us</label>
-                                    <textarea type="text" name="heard_from" placeholder="Heard"> </textarea><br>
+                                    <textarea type="text" name="heard_from" placeholder="Heard From"></textarea><br>
                                     <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
                                     <select name="part">
                                         <option value="yes">Yes</option>
@@ -258,9 +266,9 @@
                                     <label>Business Images (upto 5 files)</label>
                                     <input type="file" name="images[]" onchange="checkFiles(this.files, 5, 3)" placeholder="Business Images" id="business_img" multiple="multiple" />
                                     <label>  Why you should be shortlisted</label>
-                                    <textarea type="text" name="why" placeholder="why"> </textarea><br>
+                                    <textarea type="text" name="why" placeholder="why you should be shortlisted (100 Words Only)"></textarea><br>
                                     <input style="width: 26px;" type="checkbox" />Terms and Conditions<br>
-                                    <button name="submit" class="btn btn-success">Submit</button>
+                                    <button name="submit" class="btn_snd">Submit</button>
                                 </div>
                             </fieldset>
                         </form>
