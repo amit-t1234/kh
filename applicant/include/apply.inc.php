@@ -83,6 +83,7 @@
 		$fy2019['year'] = 2019;
 		$fy2020 = $_POST['fy2020'];						
 		$fy2020['year'] = 2020;
+		$userid = uniqid();
 		print_r($profile_briefs[0]);
 
 		// check the inputs
@@ -93,8 +94,8 @@
 		} else {
 			/* Create a prepared statement */
 			try {
-				$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-				$stmt->bind_param("ssssssssssi", $aadhar_number, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $phone2, $apply_for, $company_register);
+				$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register, userid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				$stmt->bind_param("ssssssssssis", $aadhar_number, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $phone2, $apply_for, $company_register, $userid);
 				if ($stmt->execute()) {
 					echo $company_name.' '.$nature.' '.$incorporated_on.' '.$founder_count;
 					$stmt = $mysqli->prepare("INSERT INTO company (aadhar_number, company_name, nature, incorporated_on, founders_count) VALUES (?, ?, ?, ?, ?)");
@@ -138,7 +139,33 @@
 					$stmt = $mysqli->prepare("INSERT INTO attachments (aadhar_number, pitch_deck, video) VALUES (?, ?, ?)");
 					$stmt->bind_param("sss", $aadhar_number, $pitch_deck, $video);
 					$stmt->execute();
-					header("Location: ../entreprenuer.html?success=1");
+
+					// Send A mail
+					$subject = 'Kuberan House Form Submitted successfully';
+					$from = 'amitthakurashwani@gmail.com';
+					 
+					// To send HTML mail, the Content-type header must be set
+					$headers  = 'MIME-Version: 1.0' . "\r\n";
+					$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+					 
+					// Create email headers
+					$headers .= 'From: '.$from."\r\n".
+					    'Reply-To: '.$from."\r\n" .
+					    'X-Mailer: PHP/' . phpversion();
+					 
+					// Compose a simple HTML email message
+					$message = '<html><body>';
+					$message .= '<h1 style="color:#f40;">Hi '.$first_name.' '.$last_name.'!</h1>';
+					$message .= '<p style="color:#080;font-size:18px;">Your Form has been successfully submitted! Your ref no. <strong>'.$userid.'</strong>(please make a note of it). We will shortly reach out to you! If you have any doubts you can write back to us. Thankyou!</p>';
+					$message .= '</body></html>';
+					 
+					// Sending email
+					if(mail($email, $subject, $message, $headers)){
+					    echo 'Your mail has been sent successfully.';
+					} else{
+					    echo 'Unable to send email. Please try again.';
+					}					
+					header("Location: ../form.html?success=1");
 				}
 				else {
 					echo $mysqli->error;

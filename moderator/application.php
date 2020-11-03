@@ -1,4 +1,6 @@
 <?php 
+  session_start();
+
   include_once 'include/dbh.inc.php';
 ?>
 <!DOCTYPE html>
@@ -43,7 +45,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item ">
+      <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -51,28 +53,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-  
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="moderators.php">
-          <i class="fas fa-gavel"></i>
-          <span>Moderators</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="score.php">
-        <i class="fas fa-sort-numeric-up-alt"></i>
-          <span>Score</span></a>
-      </li>
-
 
     
 
@@ -158,136 +138,168 @@
         <!-- End of Topbar -->
         <div class="container pb-3">
         <div class="row mt-3" style="color:black;font-weight:bold;">
-             <div class="col-md-2">Active/Inactive</div>
-             <div class="col-md-4">Item</div>
-             <div class="col-md-4">Score</div>
+             <div class="col-md-4">Field</div>
+             <div class="col-md-4">Value</div>
            </div>
+            <?php
+              $stmt = $mysqli->prepare("SELECT * FROM Users u JOIN Extras e ON u.aadhar_number = e.aadhar_number AND userid=? JOIN company c ON u.aadhar_number = c.aadhar_number JOIN Profiles p ON c.aadhar_number = p.aadhar_number JOIN Attachments a ON a.aadhar_number = u.aadhar_number JOIN Business b ON b.aadhar_number = u.aadhar_number AND sector=? ORDER BY created_on ASC");
+              $stmt->bind_param('ss', $_GET['userid'], $_SESSION['sector']);
+              $stmt->execute();
+              $result = $stmt->get_result();
+              $row = $result->fetch_assoc();
+            ?>          
             <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+
              <div class="col-md-4">Aadhar Number</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4">Name</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4">Date of Birth</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4">Gender</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Email ID</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Phone Number</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Alternative Phone Number</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Company Name</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Company Nature</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Incorporated On</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Founder Count</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Pitch Deck</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Aadhar Image</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Video</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Images</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4">Sector</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4">Category</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Idea</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Solution To </div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> How it solves</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Competitors</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4">Last Funding </div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Revenue</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
-           </div>
-                  <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Funds Needed</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
+             <div class="col-md-4"><?php echo $row["aadhar_number"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
            </div>
             <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
-             <div class="col-md-4"> Share offered</div>
-             <div class="col-md-4"><input class="form-control" type="number" placeholder="50"/></div>
+
+             <div class="col-md-4">Name</div>
+             <div class="col-md-4"><?php echo $row["first_name"].' '.$row["last_name"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
            </div>
-           <button class="btn btn-lg btn-success">Apply</button>
+              <div class="row mt-3">
+
+             <div class="col-md-4">Date of Birth</div>
+             <div class="col-md-4"><?php echo $row["dob"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+              <div class="row mt-3">
+
+             <div class="col-md-4">Gender</div>
+             <div class="col-md-4"><?php echo $row["gender"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Email ID</div>
+             <div class="col-md-4"><?php echo $row["email"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Phone Number</div>
+             <div class="col-md-4"><?php echo $row["phone"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Alternative Phone Number</div>
+             <div class="col-md-4"><?php echo $row["phone2"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Company Name</div>
+             <div class="col-md-4"><?php echo $row["company_name"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Company Nature</div>
+             <div class="col-md-4"><?php echo $row["nature"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Incorporated On</div>
+             <div class="col-md-4"><?php echo $row["incorporated_on"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Founder Count</div>
+             <div class="col-md-4"><?php echo $row["founders_count"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+<!--             <div class="row mt-3">
+
+             <div class="col-md-4"> Pitch Deck</div>
+             <div class="col-md-4"><?php echo $row["pitch_deck"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Aadhar Image</div>
+             <div class="col-md-4"><?php echo $row["aadhar_img"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Video</div>
+             <div class="col-md-4"><?php echo $row["video"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Images</div>
+             <div class="col-md-4"><?php echo $row["image"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div> -->
+             <div class="row mt-3">
+
+             <div class="col-md-4">Sector</div>
+             <div class="col-md-4"><?php echo $row["sector"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+             <div class="row mt-3">
+
+             <div class="col-md-4">Category</div>
+             <div class="col-md-4"><?php echo $row["category"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Idea</div>
+             <div class="col-md-4"><?php echo $row["idea"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Solution To </div>
+             <div class="col-md-4"><?php echo $row["solution_to"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> How it solves</div>
+             <div class="col-md-4"><?php echo $row["your_solution"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Competitors</div>
+             <div class="col-md-4"><?php echo $row["competitors"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+              <div class="row mt-3">
+
+             <div class="col-md-4">Last Funding </div>
+             <div class="col-md-4"><?php echo $row["last_funding"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Revenue</div>
+             <div class="col-md-4"><?php echo $row["revenue"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Funds Needed</div>
+             <div class="col-md-4"><?php echo $row["kuberan_house"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+            <div class="row mt-3">
+
+             <div class="col-md-4"> Share offered</div>
+             <div class="col-md-4"><?php echo $row["share"] ?></div>
+             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+           </div>
+           <button class="btn btn-lg btn-success">Submit</button>
+           <button class="btn btn-lg btn-primary">Escalate</button>
            </div>
         <!-- Begin Page Content -->
     

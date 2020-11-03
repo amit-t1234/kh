@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item ">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -61,14 +61,8 @@
       <!-- Nav Item - Pages Collapse Menu -->
   
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="applications.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Applications</span></a>
-      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="moderators.html">
+        <a class="nav-link" href="moderators.php">
         <i class="fas fa-gavel"></i>
           <span>Moderators</span></a>
       </li>
@@ -164,49 +158,51 @@
         <div class="container pb-3">
             <div class="row">
                <h3 class="col-md-12" style="color:black">Add Moderator </h3>
-               <div class="form-group col-md-6">
-                    <label>Name</label>
-                    <input class="form-control" type="text" placeholder="Name"/>
-                </div>
-                <div class="col-md-6"></div>
-                <div class="form-group col-md-6">
-                    <label>Email ID</label>
-                    <input class="form-control" type="email" placeholder="Email ID"/>
-                </div>
-                <div class="col-md-6"></div>
-                <div class="form-group col-md-6">
-                    <label>Password</label>
-                    <input class="form-control" type="password" placeholder="Password"/>
-                </div>
-                <div class="col-md-6"></div>
-                <div class="form-group col-md-6">
-                    <label>Sector</label><br>
-                    <select class="form-control">
-                        <option>AGRICULTURE</option>
-                        <option>AUTO & TRANSPORTATION</option>
-                        <option>CLEANTECH</option>
-                        <option>CONSUMER</option>
-                        <option>EDUCATION</option>
-                        <option>HARDWARE</option>
-                        <option> FOOD</option>
-                        <option>FASHION</option>
-                        <option>FINTECH</option>
-                        <option>LIFESCIENCES</option>
-                        <option>MANUFACTURING</option>
-                        <option> MEDIA </option>
-                        <option>REAL ESTATE</option>
-                        <option>SERVICES</option>
-                        <option>LOGISTICS</option>
-                        <option>TECH/SOFTWARE</option>
-                        <option>RETAIL</option>
-                        <option>AUTOMATION</option>
-                        <option>OTHERS</option>
-                     </select>
-                </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-12">
-                  <button class="btn btn-success"><i class="fas fa-plus"></i> Add </button>
-                </div>
+               <form action="include/signup.inc.php" class="w-100" method="POST">
+                 <div class="form-group col-md-6">
+                      <label>Name</label>
+                      <input class="form-control" type="text" name="name" placeholder="Name"/>
+                  </div>
+                  <div class="col-md-6"></div>
+                  <div class="form-group col-md-6">
+                      <label>Email ID</label>
+                      <input class="form-control" type="email" name="email" placeholder="Email ID"/>
+                  </div>
+                  <div class="col-md-6"></div>
+                  <div class="form-group col-md-6">
+                      <label>Password</label>
+                      <input class="form-control" type="password" name="password" placeholder="Password"/>
+                  </div>
+                  <div class="col-md-6"></div>
+                  <div class="form-group col-md-6">
+                      <label>Sector</label><br>
+                      <select name="sector">
+                          <option value="Agriculture">AGRICULTURE</option>
+                          <option value="Auto & Transportation">AUTO & TRANSPORTATION</option>
+                          <option value="Cleantech">CLEANTECH</option>
+                          <option value="Consumer">CONSUMER</option>
+                          <option value="Education">EDUCATION</option>
+                          <option value="Hardware">HARDWARE</option>
+                          <option value="Food"> FOOD</option>
+                          <option value="Fashion">FASHION</option>
+                          <option value="Fintech">FINTECH</option>
+                          <option value="Lifescience">LIFESCIENCES</option>
+                          <option value="Manufacturing">MANUFACTURING</option>
+                          <option value="Media"> MEDIA </option>
+                          <option value="Real estate">REAL ESTATE</option>
+                          <option value="Services">SERVICES</option>
+                          <option value="Logistics">LOGISTICS</option>
+                          <option value="Tech / Software">TECH/SOFTWARE</option>
+                          <option value="Retail">RETAIL</option>
+                          <option value="Automation">AUTOMATION</option>
+                          <option value="Others">OTHERS</option>
+                      </select>
+                  </div>
+                  <div class="col-md-6"></div>
+                  <div class="col-md-12">
+                    <button name="submit" class="btn btn-success"><i class="fas fa-plus"></i> Add </button>
+                  </div>                 
+               </form>
            </div>
        </div>
       <!-- End of Main Content -->

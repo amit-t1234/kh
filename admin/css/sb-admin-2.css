@@ -106,6 +106,13 @@ address {
   line-height: inherit;
 }
 
+.bg-gradient-primary {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    background-size: cover;
+}
+
+
 ol,
 ul,
 dl {

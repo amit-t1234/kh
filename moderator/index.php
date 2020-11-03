@@ -1,4 +1,6 @@
 <?php 
+  session_start();
+
   include_once 'include/dbh.inc.php';
 ?>
 <!DOCTYPE html>
@@ -19,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +46,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -59,20 +61,6 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-  
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="applications.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Applications</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="moderators.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Moderators</span></a>
-      </li>
-
     
 
       <!-- Nav Item - Tables -->
@@ -372,10 +360,6 @@
               <input class="form-check-input toggle-vis" data-column="24" type="checkbox" id="inlineCheckbox24" value="option1" checked>
               <label class="form-check-label" for="inlineCheckbox24">Share</label>
             </div>
-            <div class="form-check form-check-inline col-md-4 mx-0">
-              <input class="form-check-input toggle-vis" data-column="25" type="checkbox" id="inlineCheckbox25" value="option1" checked>
-              <label class="form-check-label" for="inlineCheckbox25">Score</label>
-            </div>
             </div>
         </div>
 
@@ -392,9 +376,10 @@
                          </div>
                          <div class="card-body">
                            <div class="table-responsive">
-                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                             <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                                <thead>
                                  <tr>
+                                   <th>User Id</th>
                                    <th>Aadhar Number</th>
                                    <th>Name</th>
                                    <th>Dob</th>
@@ -420,11 +405,11 @@
                                    <th>Revenue</th>
                                    <th>Funded Needed from Us</th>
                                    <th>Share</th>
-                                   <th>Score</th>
                                  </tr>
                                </thead>
                                <tfoot>
                                  <tr>
+                                   <th>User Id</th>
                                    <th>Aadhar Number</th>
                                    <th>Name</th>
                                    <th>Dob</th>
@@ -450,18 +435,19 @@
                                    <th>Revenue</th>
                                    <th>Fund Needed from Us</th>
                                    <th>Share</th>
-                                   <th>Score</th>
                                  </tr>
                                </tfoot>
                                <tbody>
                                 <?php
-                                  $stmt = $mysqli->prepare("SELECT * FROM Users INNER JOIN Extras INNER JOIN company INNER JOIN Profiles INNER JOIN Attachments INNER JOIN Business ORDER BY created_on ASC");
+                                  $stmt = $mysqli->prepare("SELECT * FROM Users u JOIN Extras e ON u.aadhar_number = e.aadhar_number JOIN company c ON u.aadhar_number = c.aadhar_number JOIN Profiles p ON c.aadhar_number = p.aadhar_number JOIN Attachments a ON a.aadhar_number = u.aadhar_number JOIN Business b ON b.aadhar_number = u.aadhar_number AND sector=? ORDER BY created_on ASC");
+                                  $stmt->bind_param('s', $_SESSION['sector']);                                  
                                   $stmt->execute();
                                   $result = $stmt->get_result();
                                   while($row = $result->fetch_assoc()) {
-
+                                    if ($row['type'] == 'ideator') {
                                 ?>
                                   <tr>
+                                    <td><a href="application.php?userid=<?php echo $row['userid']; ?>"><?php echo $row['userid']; ?></a></td>
                                     <td><?php echo $row['aadhar_number']; ?></td>
                                     <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
                                     <td><?php echo $row['dob']; ?></td>
@@ -512,10 +498,10 @@
                                     <td><?php echo $row['revenue'] ?></td>
                                     <td><?php echo $row['kuberan_house'] ?></td>
                                     <td><?php echo $row['share'] ?></td>
-                                    <td><input type="number" min="1" max="100" step="0.01" name=""></td>
                                   </tr>
                                 <?php
-                                  }                                
+                                  }    
+                                  }                            
                                 ?>
                                </tbody>
                              </table>
@@ -525,8 +511,145 @@
 
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                      No ENTREPRENUER here.
+                        <!-- DataTales Example -->
+                       <div class="card shadow mb-4">
+                         <div class="card-header py-3">
+                           <h6 class="m-0 font-weight-bold text-primary">Applications</h6>
+                         </div>
+                         <div class="card-body">
+                           <div class="table-responsive">
+                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                               <thead>
+                                 <tr>
+                                   <th>User Id</th>
+                                   <th>Aadhar Number</th>
+                                   <th>Name</th>
+                                   <th>Dob</th>
+                                   <th>Gender</th>
+                                   <th>Email</th>
+                                   <th>Phone Number</th>
+                                   <th>Second Phone Number</th>
+                                   <th>Company Name</th>
+                                   <th>Nature</th>
+                                   <th>Incorporated On</th>
+                                   <th>Founder Count</th>
+                                   <th>Pitch Deck</th>
+                                   <th>Aadhar Image</th>
+                                   <th>Videos</th>
+                                   <th>Images</th>
+                                   <th>Sector</th>
+                                   <th>Category</th>
+                                   <th>Idea</th>
+                                   <th>Solution To?</th>
+                                   <th>How It Solves?</th>
+                                   <th>Competitors?</th>
+                                   <th>Last Funding</th>
+                                   <th>Revenue</th>
+                                   <th>Funded Needed from Us</th>
+                                   <th>Share</th>
+                                 </tr>
+                               </thead>
+                               <tfoot>
+                                 <tr>
+                                   <th>User Id</th>
+                                   <th>Aadhar Number</th>
+                                   <th>Name</th>
+                                   <th>Dob</th>
+                                   <th>Gender</th>
+                                   <th>Email</th>
+                                   <th>Phone Number</th>
+                                   <th>Second Phone Number</th>
+                                   <th>Company Name</th>
+                                   <th>Nature</th>
+                                   <th>Incorporated On</th>
+                                   <th>Founder Count</th>
+                                   <th>Pitch Deck</th>
+                                   <th>Aadhar Image</th>
+                                   <th>Videos</th>
+                                   <th>Images</th>
+                                   <th>Sector</th>
+                                   <th>Category</th>
+                                   <th>Idea</th>
+                                   <th>Solution To?</th>
+                                   <th>How It Solves?</th>
+                                   <th>Competitors?</th>
+                                   <th>Last Funding</th>
+                                   <th>Revenue</th>
+                                   <th>Fund Needed from Us</th>
+                                   <th>Share</th>
+                                 </tr>
+                               </tfoot>
+                               <tbody>
+                                <?php
+                                  $stmt = $mysqli->prepare("SELECT * FROM Users u JOIN Extras e ON u.aadhar_number = e.aadhar_number JOIN company c ON u.aadhar_number = c.aadhar_number JOIN Profiles p ON c.aadhar_number = p.aadhar_number JOIN Attachments a ON a.aadhar_number = u.aadhar_number JOIN Business b ON b.aadhar_number = u.aadhar_number ORDER BY created_on ASC");
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  while($row = $result->fetch_assoc()) {
+                                    if ($row['type'] == 'entreprenuer') {
 
+                                ?>
+                                  <tr>
+                                    <td><a href="application.php?userid=<?php echo $row['userid']; ?>"><?php echo $row['userid']; ?></a></td>
+                                    <td><?php echo $row['aadhar_number']; ?></td>
+                                    <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
+                                    <td><?php echo $row['dob']; ?></td>
+                                    <td><?php echo $row['gender']; ?></td>
+                                    <td><?php echo $row['email']; ?></td>
+                                    <td><?php echo $row['phone']; ?></td>
+                                    <td><?php echo $row['phone2']; ?></td>
+                                    <td><?php echo $row['company_name']; ?></td>
+                                    <td><?php echo $row['nature']; ?></td>
+                                    <td><?php echo $row['incorporated_on']; ?></td>
+                                    <td><?php echo $row['founders_count']; ?></td>
+                                    <?php  
+                                      $directory =  dirname(__DIR__, 1);
+                                      if ($row['pitch_deck'])
+                                        echo '<td><img src="'.$directory.'\\applicant\\uploads\\pitchDecks\\'.$row['pitch_deck'].'" class="img-fluid"></td>';
+                                      else
+                                        echo '<td></td>';
+                                      if ($row['aadhar_img'])
+                                        echo '<td><img src="'.$directory.'\\applicant\\uploads\\aadhar_img\\'.$row['aadhar_img'].'" class="img-fluid"></td>';
+                                      else
+                                        echo '<td></td>';
+                                      if ($row['video'])
+                                        echo '<td><img src="'.$directory.'\\applicant\\uploads\\video\\'.$row['video'].'" class="img-fluid"></td>';
+                                      else
+                                        echo '<td></td>';
+                                    ?>
+                                    <td>
+                                      <?php  
+                                        if ($row['img1'])
+                                          echo '<img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img1'].'" class="img-fluid">';
+                                        if ($row['img2'])
+                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img2'].'" class="img-fluid">';
+                                        if ($row['img3'])
+                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img3'].'" class="img-fluid">';
+                                        if ($row['img4'])
+                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img4'].'" class="img-fluid">';
+                                        if ($row['img5'])
+                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img5'].'" class="img-fluid">';
+                                      ?>
+                                    </td>
+                                    <td><?php echo $row['sector'] ?></td>
+                                    <td><?php echo $row['category'] ?></td>
+                                    <td><?php echo $row['idea'] ?></td>
+                                    <td><?php echo $row['solution_to'] ?></td>
+                                    <td><?php echo $row['your_solution'] ?></td>
+                                    <td><?php echo $row['competitors'] ?></td>
+                                    <td><?php echo $row['last_funding'] ?></td>
+                                    <td><?php echo $row['revenue'] ?></td>
+                                    <td><?php echo $row['kuberan_house'] ?></td>
+                                    <td><?php echo $row['share'] ?></td>
+                                  </tr>
+                                <?php
+                                  }  
+                                  }                              
+                                ?>
+                               </tbody>
+                             </table>
+                           </div>
+                         </div>
+                       </div>
                     </div>
                   </div>
         </div>
