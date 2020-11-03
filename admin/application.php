@@ -35,7 +35,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-text mx-3">Kuberan House </div>
+        <div class="sidebar-brand-text mx-3"><img class="img-fluid" src="img/logo.png"> </div>
       </a>
 
       <!-- Divider -->
@@ -103,11 +103,11 @@
            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
             <!-- Sidebar Toggle (Topbar) -->
-            <form class="form-inline">
+            <!--<form class="form-inline">
               <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
               </button>
-            </form>
+            </form>-->
   
        
   
@@ -306,7 +306,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; Your Kuberan's House 2020</span>
           </div>
         </div>
       </footer>

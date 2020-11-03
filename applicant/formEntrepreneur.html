@@ -48,7 +48,7 @@
                             <!-- progressbar -->
                             <ul id="progressbar">
                                 <li class="active" id="account"><strong>Introduction</strong></li>
-                                <li id="personal"><strong>About Business</strong></li>
+                                <li id="personal"><strong>About Idea</strong></li>
                                 <li id="payment"><strong>Other Information</strong></li>
                                 <li id="confirm"><strong>Attachments</strong></li>
                             </ul> <!-- fieldsets -->
@@ -144,7 +144,7 @@
                                 </div> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
-                                <div class="form-card"><h2>About Business</h2> <br>
+                                <div class="form-card"><h2>About Idea</h2> <br>
                                     <label>Select relevant Sector</label><br>
                                     <select name="sector">
                                         <option value="Agriculture">AGRICULTURE</option>
@@ -233,7 +233,9 @@
                                         <option value="SERIES A">SERIES A</option>
                                         <option value="SERIES A & ABOVE">SERIES A & ABOVE</option>
                                     </select><br><br>
+                                    <label>Funding Needed</label>
                                       <input type="number" name="kuberan_house" placeholder="Funding needed from Kuberan House" />  
+                                      <label>Share Ratio Offered</label>
                                       <input type="number" name="share" placeholder="Share Ratio Offered" />    
 
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
@@ -246,30 +248,35 @@
                                     <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
                                     <select name="part">
                                         <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select><br>
+                                       
+                                        <option value="no" selected="selected">No</option>
+                                    </select><br><br> <input type="text" name="part_name" id="part" class="d-none" placeholder="Name"/><br>
                                     <label>  DO YOU HOLD THE IP/PATENT/TRADEMARK/COPYRIGHTS FOR YOUR IDEA/PRODUCT</label>
                                     <select name="hold">
                                         <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select><br>
+                                       
+                                        <option value="no" selected="selected">No</option>
+                                    </select><br><br> <input type="text" name="hold_name" id="hold" class="d-none" placeholder="Name"/><br>
                                    
-                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Confirm" />
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title text-center">Attachments </h2> <br><br>
-                                    <label>Pitch Deck </label><br>
+                                    <label>Pitch Deck (example: <a target="_blank" style="color: unset;" href="https://www.irjet.net/archives/V7/i5/IRJET-V7I5210.pdf">Pitch Deck</a>) </label><br>
                                     <input type="file" name="pitchDeck" placeholder="pitch Deck"/>
                                     <label>Video </label><br>
                                     <input type="file" name="video" placeholder="Video"/>
-                                    <label>Business Images (upto 5 files)</label>
+                                    <label>Business Images (upto 5 Images)</label>
                                     <input type="file" name="images[]" onchange="checkFiles(this.files, 5, 3)" placeholder="Business Images" id="business_img" multiple="multiple" />
                                     <label>  Why you should be shortlisted</label>
                                     <textarea type="text" name="why" placeholder="why you should be shortlisted (100 Words Only)"></textarea><br>
                                     <input style="width: 26px;" type="checkbox" />Terms and Conditions<br>
-                                    <button name="submit" class="btn_snd">Submit</button>
                                 </div>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <div class="d-flex align-item-center justify-content-center">
+                                    <button name="submit" class="w-75 btn_snd">Submit</button>                                   
+                                </div>                                
                             </fieldset>
                         </form>
                     </div>
@@ -280,7 +287,19 @@
 </div>         
 </body>
 <script>
-    $(document).ready(function(){
+function checkFiles(files, total) {       
+    if(files.length>total) {
+        alert("Only 5 files allowed, few files have been truncated!");
+
+        let list = new DataTransfer;
+        for(let i=0; i<total; i++)
+           list.items.add(files[i]) 
+
+        document.getElementById('business_img').files = list.files
+    }       
+}
+
+$(document).ready(function(){
 
 var current_fs, next_fs, previous_fs; //fieldsets
 var opacity;
@@ -293,6 +312,22 @@ $('input[name="type"]').change(function() {
         $('#title').text('Ideator');
     }  
 })
+
+$('select[name="part"]').change(function() {
+    if ($(this).val() == 'yes') {
+        $('#part').removeClass('d-none');
+    } else {
+        $('#part').addClass('d-none');
+    }
+});
+
+$('select[name="hold"]').change(function() {
+    if ($(this).val() == 'yes') {
+        $('#hold').removeClass('d-none');
+    } else {
+        $('#hold').addClass('d-none');
+    }
+});
 
 $(".next").click(function(){
 

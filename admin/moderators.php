@@ -33,10 +33,8 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Kuberan House </div>
+        
+        <div class="sidebar-brand-text mx-3"><img class="img-fluid" src="img/logo.png"> </div>
       </a>
 
       <!-- Divider -->
@@ -51,12 +49,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
   
@@ -85,9 +77,9 @@
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
+      <!-- <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div> -->
 
     </ul>
     <!-- End of Sidebar -->
@@ -211,7 +203,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; Your Kuberan's House 2020</span>
           </div>
         </div>
       </footer>
