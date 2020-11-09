@@ -176,12 +176,12 @@
                                         <option value="other">OTHER</option>
                                     </select><br><br>
                                     <label>Define Your Idea</label>
-                                    <textarea type="text" name="idea" placeholder="Define Business Idea (100 Words Only)"></textarea><br>
+                                    <textarea type="text" name="idea" placeholder="Define Business Idea (Maximum 100 Words)"></textarea><br>
                                     <label>Your Business is trying to solve</label>
-                                    <textarea type="text" name="solution_to" placeholder="Solving (100 Words Only)"></textarea><br>
+                                    <textarea type="text" name="solution_to" placeholder="Solving (Maximum 100 Words)"></textarea><br>
 
                                     <label>How are you solving it</label>
-                                    <textarea type="text" name="your_solution" placeholder="Define Business Idea (100 Words Only)"></textarea><br>
+                                    <textarea type="text" name="your_solution" placeholder="Define Business Idea (Maximum 100 Words)"></textarea><br>
 
                                     <label>What are your business competitors</label>
                                     <textarea type="text" name="competitors" placeholder="Define Business Idea (100 Words Only)"> </textarea><br>
@@ -199,7 +199,7 @@
                                         </thead>
                                         <tbody>
                                           <tr>
-                                            <td>Customer Count</td>
+                                            <td>Customer Count <br> <small>In Units</small></td>
                                             <td><input name="fy2018[customer_count]" type="number"></td>
                                             <td><input name="fy2019[customer_count]" type="number"></td>
                                             <td><input name="fy2020[customer_count]" type="number"></td>
@@ -233,10 +233,10 @@
                                         <option value="SERIES A">SERIES A</option>
                                         <option value="SERIES A & ABOVE">SERIES A & ABOVE</option>
                                     </select><br><br>
-                                    <label>Funding Needed</label>
-                                      <input type="number" name="kuberan_house" placeholder="Funding needed from Kuberan House" />  
-                                      <label>Share Ratio Offered</label>
-                                      <input type="number" name="share" placeholder="Share Ratio Offered" />    
+                                    <label>Investment Needed</label>
+                                      <input type="number" name="kuberan_house" placeholder="Investment needed from Kuberan's House" />  
+                                      <label>Equity Offered to Kuberan's House</label>
+                                      <input type="number" name="share" placeholder="Equity Offered to Kuberan's House" />    
 
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -263,13 +263,13 @@
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title text-center">Attachments </h2> <br><br>
-                                    <label>Pitch Deck (example: <a target="_blank" style="color: unset;" href="https://www.irjet.net/archives/V7/i5/IRJET-V7I5210.pdf">Pitch Deck</a>) </label><br>
+                                    <label>Pitch Deck (Maximum Size upto 10MB) <br> (example: <a target="_blank" style="color: unset;" href="https://www.irjet.net/archives/V7/i5/IRJET-V7I5210.pdf">Pitch Deck</a>) </label><br>
                                     <input type="file" name="pitchDeck" placeholder="pitch Deck"/>
-                                    <label>Video </label><br>
+                                    <label>Video (Optional) (Maximum Size 20MB) </label><br>
                                     <input type="file" name="video" placeholder="Video"/>
-                                    <label>Business Images (upto 5 Images)</label>
+                                    <label>Business Images (upto 5 Images of maximum size 20MB)</label>
                                     <input type="file" name="images[]" onchange="checkFiles(this.files, 5, 3)" placeholder="Business Images" id="business_img" multiple="multiple" />
-                                    <label>  Why you should be shortlisted</label>
+                                    <label>  Why should we shortlist you</label>
                                     <textarea type="text" name="why" placeholder="why you should be shortlisted (100 Words Only)"></textarea><br>
                                     <input style="width: 26px;" type="checkbox" />Terms and Conditions<br>
                                 </div>
