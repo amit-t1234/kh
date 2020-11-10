@@ -179,43 +179,14 @@
                                     <textarea type="text" name="competitors" placeholder="Define Business Idea (100 Words Only)"> </textarea><br>
                                     <label>Define Your Revenue Model</label>
                                     <textarea type="text" name="revenue" placeholder="Define Business Idea (100 Words Only)"> </textarea><br>
+                                    <label>Latest funds raised</label><br>
+                                    <select name="last_funding_amount">  
 
-                                    <table class="table table-striped">
-                                        <thead>
-                                          <tr>
-                                            <th>Numbers<br> <small>INR (in Lakhs only)</small></th>
-                                            <th>FY 20-21</th>
-                                            <th>FY 19-20</th>
-                                            <th>FY 18-19</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <td>Customer Count <br> <small>In Units</small></td>
-                                            <td><input name="fy2018[customer_count]" type="number"></td>
-                                            <td><input name="fy2019[customer_count]" type="number"></td>
-                                            <td><input name="fy2020[customer_count]" type="number"></td>
-                                          </tr>
-                                          <tr>
-                                            <td>Average Billing per Customer</td>
-                                            <td><input name="fy2018[average_billing]" type="number"></td>
-                                            <td><input name="fy2019[average_billing]" type="number"></td>
-                                            <td><input name="fy2020[average_billing]" type="number"></td>
-                                          </tr>
-                                          <tr>
-                                            <td>Revenues</td>
-                                            <td><input name="fy2018[revenue]" type="number"></td>
-                                            <td><input name="fy2019[revenue]" type="number"></td>
-                                            <td><input name="fy2020[revenue]" type="number"></td>
-                                          </tr>
-                                          <tr>
-                                            <td>Profit/Loss(insert negative value for loss)</td>
-                                            <td><input name="fy2018[profit]" type="number"></td>
-                                            <td><input name="fy2019[profit]" type="number"></td>
-                                            <td><input name="fy2020[profit]" type="number"></td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
+                                        <option value="BOOTSTRAPPED">0 - 2.5 Lac/Month</option>
+                                        <option value="SEED FUNDING">2.5 - 10 Lac/Month</option>
+                                        <option value="ANGEL FUNDING">10 - 50 Lac/Month</option>
+                                        <option value="PRESERIES">50 & above</option> 
+                                    </select><br>
                                       <label>Latest funds raised through</label><br>
                                     <select name="last_funding">
                                         <option value="BOOTSTRAPPED">BOOTSTRAPPED</option>
@@ -226,9 +197,9 @@
                                         <option value="SERIES A & ABOVE">SERIES A & ABOVE</option>
                                     </select><br><br>
                                     <label>Investment Needed</label>
-                                      <input type="number" name="kuberan_house" placeholder="Investment needed from Kuberan's House" />  
-                                      <label>Equity Offered to Kuberan's House</label>
-                                      <input type="number" name="share" placeholder="Equity Offered to Kuberan's House" />    
+                                      <input type="number" name="kuberan_house" placeholder="Investment needed from Startup India" />  
+                                      <label>Equity Offered to Startup India</label>
+                                      <input type="number" name="share" placeholder="Equity Offered to Startup India" />    
 
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
