@@ -36,17 +36,32 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         
-        <div class="sidebar-brand-text mx-3"><img class="img-fluid" src="img/logo.png"> </div>
+        <div class="sidebar-brand-text mx-3"><img  src="img/white.png" width="200" style="padding-top:30px"> </div>
       </a>
 
       <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item active"  style="margin-top:30px">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
+      </li>
+      <li class="nav-item "  >
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Documents</span></a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Get Funding</span></a>
+      </li>
+      <li class="nav-item "  >
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Profile</span></a>
       </li>
 
       <!-- Divider -->
@@ -60,7 +75,7 @@
       </li> -->
 
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+       
 
       <!-- Sidebar Toggler (Sidebar) -->
       <!-- <div class="text-center d-none d-md-inline">
@@ -105,7 +120,7 @@
               <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" >
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -160,13 +175,14 @@
               $reviewed = $row['reviewed'];        
             ?>
             <!-- Earnings (Monthly) Card Example -->
+            
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Application Recieved Total</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total; ?></div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Name of Startup</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Ola Designs</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -182,8 +198,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Applications Scored</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $scored; ?></div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Name of Founder</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Ramesh</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -199,16 +215,12 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Applications Reviewed</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Category of Startup</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $reviewed; ?></div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Seeking Funds</div>
                         </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
+                       
                       </div>
                     </div>
                     <div class="col-auto">
@@ -218,23 +230,28 @@
                 </div>
               </div>
             </div>
-
-            <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Applications</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($total - $scored); ?></div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">District of Startup </div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Amaravati</div>
+                        </div>
+                         
+                      </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Pending Requests Card Example -->
+             
           </div>
           
           <!-- Content Row -->
@@ -361,129 +378,33 @@
                              <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                                <thead>
                                  <tr>
-                                   <th>User Id</th>
-                                   <th>Aadhar Number</th>
-                                   <th>Name</th>
-                                   <th>Dob</th>
-                                   <th>Gender</th>
-                                   <th>Email</th>
-                                   <th>Phone Number</th>
-                                   <th>Second Phone Number</th>
-                                   <th>Company Name</th>
-                                   <th>Nature</th>
-                                   <th>Incorporated On</th>
-                                   <th>Founder Count</th>
-                                   <th>Pitch Deck</th>
-                                   <th>Aadhar Image</th>
-                                   <th>Videos</th>
-                                   <th>Images</th>
-                                   <th>Sector</th>
-                                   <th>Category</th>
-                                   <th>Idea</th>
-                                   <th>Solution To?</th>
-                                   <th>How It Solves?</th>
-                                   <th>Competitors?</th>
-                                   <th>Last Funding</th>
-                                   <th>Revenue</th>
-                                   <th>Funded Needed from Us</th>
-                                   <th>Share</th>
+                                 <th>Application Id</th>
+                                   <th>Application</th>
+                                   <th>Status</th>
+                                  
+                                  
+                                    
                                  </tr>
                                </thead>
                                <tfoot>
                                  <tr>
-                                   <th>User Id</th>
-                                   <th>Aadhar Number</th>
-                                   <th>Name</th>
-                                   <th>Dob</th>
-                                   <th>Gender</th>
-                                   <th>Email</th>
-                                   <th>Phone Number</th>
-                                   <th>Second Phone Number</th>
-                                   <th>Company Name</th>
-                                   <th>Nature</th>
-                                   <th>Incorporated On</th>
-                                   <th>Founder Count</th>
-                                   <th>Pitch Deck</th>
-                                   <th>Aadhar Image</th>
-                                   <th>Videos</th>
-                                   <th>Images</th>
-                                   <th>Sector</th>
-                                   <th>Category</th>
-                                   <th>Idea</th>
-                                   <th>Solution To?</th>
-                                   <th>How It Solves?</th>
-                                   <th>Competitors?</th>
-                                   <th>Last Funding</th>
-                                   <th>Revenue</th>
-                                   <th>Fund Needed from Us</th>
-                                   <th>Share</th>
+                                 <th>Application Id</th>
+                                   <th>Application</th>
+                                   <th>Status</th>
+                                   
+                                  
+                                   
                                  </tr>
                                </tfoot>
                                <tbody>
-                                <?php
-                                  $stmt = $mysqli->prepare("SELECT * FROM Users u JOIN Extras e ON u.aadhar_number = e.aadhar_number JOIN company c ON u.aadhar_number = c.aadhar_number JOIN Profiles p ON c.aadhar_number = p.aadhar_number JOIN Attachments a ON a.aadhar_number = u.aadhar_number JOIN Business b ON b.aadhar_number = u.aadhar_number ORDER BY created_on ASC");
-                                  $stmt->execute();
-                                  $result = $stmt->get_result();
-                                  while($row = $result->fetch_assoc()) {
-                                    if ($row['type'] == 'ideator') {
-                                ?>
-                                  <tr>
-                                    <td><a href="application.php?userid=<?php echo $row['userid']; ?>"><?php echo $row['userid']; ?></a></td>
-                                    <td><?php echo $row['aadhar_number']; ?></td>
-                                    <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
-                                    <td><?php echo $row['dob']; ?></td>
-                                    <td><?php echo $row['gender']; ?></td>
-                                    <td><?php echo $row['email']; ?></td>
-                                    <td><?php echo $row['phone']; ?></td>
-                                    <td><?php echo $row['phone2']; ?></td>
-                                    <td><?php echo $row['company_name']; ?></td>
-                                    <td><?php echo $row['nature']; ?></td>
-                                    <td><?php echo $row['incorporated_on']; ?></td>
-                                    <td><?php echo $row['founders_count']; ?></td>
-                                    <?php  
-                                      $directory =  dirname(__DIR__, 1);
-                                      if ($row['pitch_deck'])
-                                        echo '<td><img src="'.$directory.'\\applicant\\uploads\\pitchDecks\\'.$row['pitch_deck'].'" class="img-fluid"></td>';
-                                      else
-                                        echo '<td></td>';
-                                      if ($row['aadhar_img'])
-                                        echo '<td><img src="'.$directory.'\\applicant\\uploads\\aadhar_img\\'.$row['aadhar_img'].'" class="img-fluid"></td>';
-                                      else
-                                        echo '<td></td>';
-                                      if ($row['video'])
-                                        echo '<td><img src="'.$directory.'\\applicant\\uploads\\video\\'.$row['video'].'" class="img-fluid"></td>';
-                                      else
-                                        echo '<td></td>';
-                                    ?>
-                                    <td>
-                                      <?php  
-                                        if ($row['img1'])
-                                          echo '<img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img1'].'" class="img-fluid">';
-                                        if ($row['img2'])
-                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img2'].'" class="img-fluid">';
-                                        if ($row['img3'])
-                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img3'].'" class="img-fluid">';
-                                        if ($row['img4'])
-                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img4'].'" class="img-fluid">';
-                                        if ($row['img5'])
-                                          echo '<br><img src="'.$directory.'\\applicant\\uploads\\images\\'.$row['img5'].'" class="img-fluid">';
-                                      ?>
-                                    </td>
-                                    <td><?php echo $row['sector'] ?></td>
-                                    <td><?php echo $row['category'] ?></td>
-                                    <td><?php echo $row['idea'] ?></td>
-                                    <td><?php echo $row['solution_to'] ?></td>
-                                    <td><?php echo $row['your_solution'] ?></td>
-                                    <td><?php echo $row['competitors'] ?></td>
-                                    <td><?php echo $row['last_funding'] ?></td>
-                                    <td><?php echo $row['revenue'] ?></td>
-                                    <td><?php echo $row['kuberan_house'] ?></td>
-                                    <td><?php echo $row['share'] ?></td>
-                                  </tr>
-                                <?php
-                                  }    
-                                  }                            
-                                ?>
+                               <tr>
+                                   <th>1232</th>
+                                   <th>Ola Taxi </th>
+                                   <th>Accpeted</th>
+                                   
+                                  
+                                   
+                                 </tr>
                                </tbody>
                              </table>
                            </div>
@@ -643,7 +564,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-          <span>Copyright &copy; Startup India - Telangana 2020</span>
+          <span>Copyright &copy; Startup Portal - Government of Telangana</span>
           </div>
         </div>
       </footer>
