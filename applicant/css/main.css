@@ -1,7 +1,5 @@
 .body-back{
-    background-image: url(../img/bg.jpg);
-    background-attachment: fixed;
-    background-size: cover;
+ background: #e1e1e1;
 }
 
 .text-muted-style{
@@ -9,18 +7,18 @@
     font-size: 0.7rem;
 }
 label{
-    color: #e6b632;
+    color: #000;
 }
 .heading-style{
-    font-family: 'The Wanters DEMO';
-    color: #e6b632;
+   
+    color: #000;
 }
 
 .shadow{
     box-shadow: 0px 0px 45px 0px #fde06f !important;
 }
 .text-color-style{
-    color: #e6b632;
+    color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 * {
@@ -98,13 +96,13 @@ html {
     box-shadow: none !important;
     border: none;
     font-weight: bold;
-    border-bottom: 2px solid #e6b632;
+    border-bottom: 2px solid #000;
     outline-width: 0
 }
 
 #msform .action-button {
     width: 100px;
-    background: #e6b632;
+    background: #000;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -116,7 +114,7 @@ html {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #e6b632
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #000
 }
 
 #msform .action-button-previous {
@@ -145,7 +143,7 @@ select.list-dt {
 }
 
 select.list-dt:focus {
-    border-bottom: 2px solid #e6b632
+    border-bottom: 2px solid #000
 }
 
 .card {
@@ -170,7 +168,7 @@ select.list-dt:focus {
 }
 
 #progressbar .active {
-    color: #e6b632
+    color: #000;
 }
 
 #progressbar li {
@@ -227,7 +225,7 @@ select.list-dt:focus {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #e6b632
+    background: #d3d3d3;
 }
 
 .radio-group {

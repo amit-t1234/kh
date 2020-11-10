@@ -29,20 +29,21 @@ body{
     font-display: swap;
 }
 .navbar.navbar-expand-md.navbar-light {
-	background-color: #000;
+	background-color: #fff;
+	color: black;
 	padding: 0;
 }
 .navbar-light .navbar-nav .nav-link {
 	color: #fce575;
-	font-family: 'quantumregular';
+
 	font-size:16px;
 	text-transform:uppercase;
 }
 .navbar-light .navbar-nav .nav-link:hover{
-	color: #d4b748;
+	color: #000;
 }
 .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
-	color: #fde06f;
+	color: #000;
 	position:relative;
 }
 .navbar-light .navbar-nav .active > .nav-link::after {
@@ -96,7 +97,7 @@ body{
 	font-size: 100px;
 	font-family: 'samarkan_____normal';
 	color: #1f1e1e;
-	text-shadow: 0px 0px 15px #fde06f;
+	text-shadow: 0px 0px 15px #000;
 	text-align: center;
 	margin: 0;
 	line-height: 80px;
@@ -114,11 +115,11 @@ body{
 	width: 135px;
 	background-image: linear-gradient(#454242, #1f1e1e);
 	height: 135px;
-	color: #fde06f;
+	color: #000;
 	border-radius: 100%;
 	padding: 18px;
 	text-align: center;
-	border: solid 1px #fde06f;
+	border: solid 1px #000;
 	position: absolute;
 	right: 205px;
 	top: 65px;
@@ -141,11 +142,11 @@ body{
 	width: 100px;
 	background-image: linear-gradient(#454242, #1f1e1e);
 	height: 100px;
-	color: #fde06f;
+	color: #000;
 	border-radius: 100%;
 	padding: 10px;
 	text-align: center;
-	border: solid 1px #fde06f;
+	border: solid 1px #000;
 	position: absolute;
 	right: 100px;
 	top: 50px;
@@ -229,7 +230,7 @@ body{
 @-webkit-keyframes spin_4 { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin_4 { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 .merge_line {
-	background-color: #fde06f;
+	background-color: #000;
 	width: 2px;
 	height: 65px;
 	position: absolute;
@@ -459,7 +460,7 @@ body{
 }
 .sect_make_in_india h2 {
 	text-align: center;
-	color: #fde06f;
+	color: #000;
 	font-weight: 800;
 	margin-top: 58px;
 	font-size: 40px;
@@ -872,7 +873,7 @@ footer span{
 	position:relative;
 }
 .kuberas li span {
-	color: #fde06f;
+	color: #000;
 	font-size: 22px;
 	font-weight: 600;
 	position: absolute;
@@ -900,12 +901,12 @@ footer span{
 	width: 130px;
 	height: 150px;
 	border-radius: 100%;
-	background-color: #fde06f;
+	background-color: #000;
 	position: absolute;
 	top: 2px;
 	left: 28px;
 	z-index: -1;
-	box-shadow: 0px 0px 82px 19px #fde06f;
+	box-shadow: 0px 0px 82px 19px #000;
 }
 .kuberas li:nth-child(1) {
 	left: 8px;
@@ -977,7 +978,7 @@ footer span{
 }
 .team_bx {
 	margin-top: 70px;
-	border: solid 1px #fde06f;
+	border: solid 1px #000;
 	position: relative;
 	margin-bottom: 30px;
 }
@@ -1020,7 +1021,7 @@ footer span{
 	top: 0;
 	z-index: 9;
 	background-color: #000;
-	color: #fde06f;
+	color: #000;
 	padding: 20px 15px;
 	font-weight: 600;
 	right: 0;
@@ -1036,7 +1037,7 @@ footer span{
 }
 .btn_more:hover{
 	background-color:#333;
-	color:#fde06f;
+	color:#000;
 	transition:all 0.7s;
 	text-decoration:none;
 }
@@ -1048,7 +1049,7 @@ footer span{
 }
 .modal-header {
 	color: #000;
-	background-color: #fde06f;
+	background-color: #000;
 	font-size: 30px;
 	font-weight: 600;
 	padding: 0px 19px;
@@ -1076,8 +1077,8 @@ footer span{
 	font-size: 14px;
 }
 .tm_social_media li a {
-	color: #fde06f;
-	border: solid 1px #fde06f;
+	color: #000;
+	border: solid 1px #000;
 	padding: 7px 10px;
 }
 .team_tab{
@@ -1092,12 +1093,12 @@ footer span{
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 	color: #000;
-	background-color: #fde06f;
-	border-color: #fde06f #fde06f #fff;
+	background-color: #000;
+	border-color: #000 #000 #fff;
 	font-weight: 600;
 }
 .nav-tabs {
-	border-bottom: 1px solid #fde06f;
+	border-bottom: 1px solid #000;
 }
 .team_tab .tab-content {
 	background-image: linear-gradient(rgba(253,224,111,1), rgba(184,151,21,0));
@@ -1114,9 +1115,9 @@ footer span{
 .contact_us .map iframe {
 	width: 100%;
 	height: 350px;
-	border: solid 1px #fde06f;
+	border: solid 1px #000;
 	margin-bottom: 55px;
-	box-shadow: 0px 0px 45px 0px #fde06f;
+	box-shadow: 0px 0px 45px 0px #000;
 }
 .details_right address {
 	margin-bottom: 0;
@@ -1135,7 +1136,7 @@ footer span{
 .contct_frm {
 	padding: 25px;
 	background-color: #000;
-	box-shadow: 0px 0px 45px 0px #fde06f;
+	box-shadow: 0px 0px 45px 0px #000;
 	margin-bottom: 50px;
 }
 .alt_rw {
@@ -1144,7 +1145,7 @@ footer span{
 .alt_rw label {
 	display: block;
 	margin: 0;
-	color: #fde06f;
+	color: #000;
 	font-weight: 600;
 	font-size: 15px;
 }
@@ -1155,7 +1156,7 @@ footer span{
 	background-color: transparent;
 	color: #fff;
 	font-size: 13px;
-	border-bottom: solid 1px #fde06f;
+	border-bottom: solid 1px #000;
 	padding: 8px 0px;
 }
 .alt_rw textarea{
@@ -1165,11 +1166,11 @@ footer span{
 	background-color: transparent;
 	color:#fff;
 	font-size:13px;
-	border-bottom: solid 1px #fde06f;
+	border-bottom: solid 1px #000;
 }
 .btn_snd {
 	border: none;
-	background-color: #fde06f;
+	background-color: #000;
 	display: block;
 	width: 100%;
 	padding: 10px;
@@ -1198,12 +1199,12 @@ footer span{
 }
 .details_right h3 {
 	font-size: 22px;
-	color: #fde06f;
+	color: #000;
 	margin-bottom: 3px;
 }
 .details_left i {
 	font-size: 35px;
-	color: #fde06f;
+	color: #000;
 }
 .about img {
 	max-width: 100%;
@@ -1245,7 +1246,7 @@ footer span{
 	background-position:center;
 }
 .btn_apply {
-	background-color: #fde06f;
+	background-color: #000;
 	color: #000;
 	border: none;
 	font-size: 16px;
@@ -1256,8 +1257,8 @@ footer span{
 	margin-bottom: 25px;
 }
 .btn_apply:hover{
-	border:solid 1px #fde06f;
-	color: #fde06f;
+	border:solid 1px #000;
+	color: #000;
 	background-color:#000;
 	transition:all 0.7s;
 }
@@ -1336,7 +1337,7 @@ footer span{
 	margin: 0 auto;
 	border: none;
 	display: table;
-	background-color: #fde06f;
+	background-color: #000;
 	font-size: 20px;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -1347,13 +1348,13 @@ footer span{
 .apply_nav {
 	height: 38px;
 	width: 100%;
-	background: #fde06f;
+	background: #000;
 	z-index: 0;
 	position: relative;
 	border-radius: 4px;
 	line-height: 20px;
 	color: #000 !important;
-	box-shadow: 0px 0px 9px 2px #fde06f;
+	box-shadow: 0px 0px 9px 2px #000;
 }
 
 /* text */
@@ -1392,7 +1393,7 @@ footer span{
 .team_hd p {
 	background-color: rgba(0,0,0,0.8);
 	margin-top: 15px;
-	color: #fde06f;
+	color: #000;
 	padding: 12px;
 	font-weight: 600;
 	font-size: 15px;
@@ -1417,12 +1418,12 @@ section.about_kuberan_house .row {
     width: 55px;
     height: 65px;
     border-radius: 100%;
-    background-color: #fde06f;
+    background-color: #000;
     position: absolute;
     top: 2px;
     left: 50px;
     z-index: -1;
-    box-shadow: 0px 0px 82px 19px #fde06f;
+    box-shadow: 0px 0px 82px 19px #000;
 }
 .moving_particles {
     display: none;
@@ -1523,7 +1524,7 @@ section.about_kuberan_house .row {
 	font-size: 45px;
 	font-family: 'samarkan_____normal';
 	color: #1f1e1e;
-	text-shadow: 0px 0px 15px #fde06f;
+	text-shadow: 0px 0px 15px #000;
 	text-align: center;
 	margin: 0;
 	line-height: 80px;
@@ -1795,7 +1796,7 @@ footer span {
 	list-style:none;
 }
 .btn_apply {
-	background-color: #fde06f;
+	background-color: #000;
 	color: #000;
 	border: none;
 	font-size: 16px;
@@ -1809,7 +1810,7 @@ footer span {
 }
 .team_bx {
 	margin-top: -70px;
-	border: solid 1px #fde06f;
+	border: solid 1px #000;
 	position: relative;
 	margin-bottom: 100px;
 }
@@ -1866,7 +1867,7 @@ footer span {
 	content: '';
 	display: block;
 	position: absolute;
-	background-image: linear-gradient(#333, #fde06f, #333);
+	background-image: linear-gradient(#333, #000, #333);
 	height: 60px;
 	width: 1px;
 	right: -6px;
@@ -1883,7 +1884,7 @@ footer span {
 	margin-bottom: 0;
 }
 .cstm_grid label {
-	color: #fde06f;
+	color: #000;
 	font-size: 14px;
 	display: block;
 	margin: 0;
@@ -1912,5 +1913,5 @@ footer span {
 }
 .details_left i {
     font-size: 25px;
-    color: #fde06f;
+    color: #000;
 }
