@@ -48,28 +48,13 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Introduction</h2>
                                     
-                                    <div class="row" style="display: none;">
-                                        <div class="col-6">
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input my-auto" style="width: auto;" type="radio" name="type" id="exampleRadios1" value="entreprenuer" checked>
-                                              <label class="form-check-label" for="exampleRadios1" style="white-space: nowrap;">
-                                                I am an Entreprenuer
-                                              </label>
-                                            </div>                                            
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input my-auto" style="width: auto;" type="radio" name="type" id="exampleRadios2" value="ideator">
-                                              <label class="form-check-label" for="exampleRadios2" style="white-space: nowrap;">
-                                                I am an Ideator
-                                              </label>
-                                            </div>                                            
-                                        </div>                                        
-                                    </div><br><br>
-                                    <label>First Name</label>
+                                    
+                                    <label> Name</label>
                                     <input type="text" name="first_name" placeholder="First Name" /> 
-                                    <label>Last Name</label>                                    
-                                    <input type="text" name="last_name" placeholder="Last Name" /> 
+                                    <label>Email</label>
+                                    <input type="email" name="email" placeholder="Email Id" /> 
+                                    <label>Mobile Number</label>
+                                    <input type="number" name="phone" placeholder="Mobile Number" /> 
                                     <label>Date of Birth</label><br>
                                     <input type="date" name="dob" placeholder="Date of Birth Name" />
                                     <Label>Gender</Label><br>
@@ -78,14 +63,16 @@
                                         <option value="female">Female</option>
                                         <option value="other">Others</option>
                                     </select><br><br>
-                                    <label>Email</label>
-                                    <input type="email" name="email" placeholder="Email Id" /> 
-                                    <label>Mobile Number</label>
-                                    <input type="number" name="phone" placeholder="Mobile Number" /> 
-                                    <label>Second Mobile Number</label>
-                                    <input type="number" name="phone2" placeholder="Alternative Mobile Number" /> 
-                                    <label>Aadhar Card Number</label>
-                                    <input type="number" name="aadhar_number" placeholder="Aadhar Card Number" />
+                                    
+                                    <Label>Proffesion</Label><br>
+                                    <select name="apply_for">
+                                        <option  value="self" selected>Student</option>
+                                        <option value="cofounder">Business Person</option>
+                                        <option value="employer">Working Profession</option>
+                                        <option value="friend"> Homemaker</option>
+                                       
+                                        <option value="other"> OTHER</option>
+                                    </select><br><br>
                                     <label>Flat Number</label>
                                     <input type="text" name="flat" placeholder="Flat" />  
                                     <label>Street Name</label>
@@ -97,17 +84,11 @@
                                     <label>State</label>
                                     <input type="text" name="state" placeholder="State" />  
                                     <br>
-                                    <Label>Applying For</Label><br>
-                                    <select name="apply_for">
-                                        <option  value="self" selected>SELF</option>
-                                        <option value="cofounder">COFOUNDER</option>
-                                        <option value="employer">EMPLOYER</option>
-                                        <option value="friend"> FRIEND</option>
-                                        <option value="family">FAMILY</option>
-                                        <option value="other"> OTHER</option>
-                                    </select><br><br>
+                                   
                                     <label>Company Name</label>
                                     <input type="text" name="company_name" placeholder="Company Name" />  
+                                    <label>CIN/Registration Number</label>
+                                    <input type="number" name="reg_number" placeholder="CIN/Registration Number" />  
                                     <Label>Nature of the Company</Label><br>
                                     <select name="nature">
                                         <option value="PRIVATE LIMITED" selected>PRIVATE LIMITED</option>

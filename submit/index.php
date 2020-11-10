@@ -51,17 +51,32 @@
       <li class="nav-item "  >
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Documents</span></a>
+          <span>Startup Recognition</span></a>
       </li>
       <li class="nav-item " >
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Get Funding</span></a>
+          <span>Incentives</span></a>
+      </li>
+      <li class="nav-item "  >
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Grievance</span></a>
+      </li>
+      <li class="nav-item "  >
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Records</span></a>
       </li>
       <li class="nav-item "  >
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
+      </li>
+      <li class="nav-item "  >
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Logout</span></a>
       </li>
 
       <!-- Divider -->
