@@ -36,7 +36,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         
-        <div class="sidebar-brand-text mx-3"><img class="img-fluid" src="img/logo.png"> </div>
+        <div class="sidebar-brand-text mx-3"><img  src="img/white.png" width="200" style="    padding-top: 10px;"> </div>
       </a>
 
       <!-- Divider -->

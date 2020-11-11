@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ideator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.png" sizes="26x26" type="image/png">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/LineIcons.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+ 
+<body class="body-back">
+<!------ Include the above in your HEAD tag ---------->
+<!------ Include the above in your HEAD tag ---------->
+<nav class="navbar navbar-expand-md navbar-light"> 
+    <div class="container-fluid text-center">
+    <a class="navbar-brand" href="index.html" target="_blank"  style="margin: auto;"><img src="img/logo.png" width="100" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      
+      </div>
+    </nav>
+<!-- MultiStep Form -->
+<div class="container-fluid">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3 text-color-style">
+                <h2 class="heading-style"><strong>Reimbursement of SGST</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <p style="padding: 40px;text-align: left;">
+                       <b> PROCEDURE FOR CLAIMING REIMBURSEMENT OF SGST</b><br><br>
+Preconditions for availing REIMBURSEMENT OF SGST Incentive under Innovation policy<br>
+o The Startup should be recognized by Government of Telangana<br>
+o Either or both of the following should be true<br>
+o Startup is incorporated in Telangana<br>
+o Startup’s headquartered/head office is based out of Telangana<br>
+o More than or equal to 50% of the qualified workforce (permanent workforce is from Telangana)<br>
+All claims shall be for the period during validity of the GO No 10 i.e 25-07-2017 – 25-07-2022.<br><br>
+<b>
+
+Process of application</b><br><br>
+i. All eligible startups shall submit their claims in the prescribed application form and attach the documents mentioned on the portal given at Annexure below for Reimbursement of SGST within six months after completion of every half year.<br>
+ii. 100% SGST paid to the state of Telangana will be reimbursed for a period of three (3) years from the date of Incorporation on a maximum turnover of INR 1Crore/Annum.<br>
+iii. For amounts exceeding 2 lakhs, startup shall obtain the details of the net tax paid during the half-year for which the claim is being made duly certified by Commercial Tax authorities.<br><br>
+<b>
+Evaluation Process</b><br><br>
+
+i. The Nodal Office, Telangana State Innovation cell, on receipt of the required documents, will scrutinize and perform necessary due diligence. On confirmation of the Startup eligibility, an assessment of the eligible reimbursement shall be recommended by the nodal office.<br>
+ii. All reimbursement recommendations will be presented to the startup council who shall than decide on sanction/disbursement keeping in view the available budget for the year. The decision of the startup council in this regard to sanctioning of any reimbursement under this incentive will be final.<br>
+iii. Reimbursement recommendations shall be made based on seniority, past claims and on the merit of each case. (For instance Company A incorporated in the year 2018 has applied for a reimbursement of Rs 1.2 Lacs as reimbursement of SGST and is otherwise eligible for the same and Company B incorporated in the year 2020 has applied for reimbursement of Rs 1.2 Lacs as reimbursement of SGST and is also eligible, Company A shall have higher chances of receiving the reimbursement as  the reimbursement eligibility is only for a period of 3 years and this would be their last year to avail of the same.)
+                    </p>
+                    <div class="col-md-12 mx-0">
+                        <form id="msform" action="./include/apply.inc.php" method="POST" enctype="multipart/form-data">
+                            <!-- progressbar -->
+                      
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Please fill the data below</h2>
+                                    
+                                   
+                                    <label>Company Name</label>
+                                    <input type="text" name="first_name" placeholder="First Name" /> 
+                                
+                                    <label>Email</label>
+                                    <input type="email" name="email" placeholder="Email Id" /> 
+                                    <label>Mobile Number</label>
+                                    <input type="number" name="phone" placeholder="Mobile Number" /> 
+                                    <label>Second Mobile Number</label>
+                                    <input type="number" name="phone2" placeholder="Alternative Mobile Number" /> 
+                                    <label>Aadhar Card Number</label>
+                                    <input type="number" name="aadhar_number" placeholder="Aadhar Card Number" />
+                                    <label>Flat Number</label>
+                                    <input type="text" name="flat" placeholder="Flat" />  
+                                    <label>Street Name</label>
+                                    <input type="text" name="street" placeholder="Street" />  
+                                    <label>Area</label>
+                                    <input type="text" name="area" placeholder="Area" />  
+                                    <label>City</label>
+                                    <input type="text" name="city" placeholder="City" />  
+                                    <label>State</label>
+                                    <input type="text" name="state" placeholder="State" />  
+                                    <br>
+                                    <Label>Applying For</Label><br>
+                                    <select name="apply_for">
+                                        <option  value="self" selected>SELF</option>
+                                        <option value="cofounder">COFOUNDER</option>
+                                        <option value="employer">EMPLOYER</option>
+                                        <option value="friend"> FRIEND</option>
+                                        <option value="family">FAMILY</option>
+                                        <option value="other"> OTHER</option>
+                                    </select><br><br>
+                                    <label>Company Name</label>
+                                    <input type="text" name="company_name" placeholder="Company Name" />  
+                                    <Label>Nature of the Company</Label><br>
+                                    <select name="nature">
+                                        <option value="PRIVATE LIMITED" selected>PRIVATE LIMITED</option>
+                                        <option value="LIMITED">LIMITED </option>
+                                        <option value="LLP">LLP</option>
+                                        <option value="PARTNERSHIP FIRM">PARTNERSHIP FIRM</option>
+                                        <option value="SOLE PROPRIETOR">SOLE PROPRIETOR</option>
+                                        <option value="NOT REGISTERED">NOT REGISTERED</option>
+                                        <option value="other">Other</option>
+                                    </select><br><br>
+                                    <label>Incorporation Date</label><br>
+                                    <input type="date" name="incorporated_on" placeholder="Icorporated On" />
+                                    <br>
+                                    <Label>Number of Partners</Label><br>
+                                    <select name="founder_count">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5"> 5</option>
+                                        <option value="6"> 5+</option>
+                                    </select><br><br>
+                          
+                                    <Label>Brief about Partners</Label><br>
+                                    <textarea name="profile_brief[0]" placeholder="Brief about them"></textarea>     
+                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card"><h2>About Idea</h2> <br>
+                                    <label>Select relevant Sector</label><br>
+                                    <select name="sector">
+                                        <option value="Agriculture">AGRICULTURE</option>
+                                        <option value="Auto & Transportation">AUTO & TRANSPORTATION</option>
+                                        <option value="Cleantech">CLEANTECH</option>
+                                        <option value="Consumer">CONSUMER</option>
+                                        <option value="Education">EDUCATION</option>
+                                        <option value="Hardware">HARDWARE</option>
+                                        <option value="Food"> FOOD</option>
+                                        <option value="Fashion">FASHION</option>
+                                        <option value="Fintech">FINTECH</option>
+                                        <option value="Lifescience">LIFESCIENCES</option>
+                                        <option value="Manufacturing">MANUFACTURING</option>
+                                        <option value="Media"> MEDIA </option>
+                                        <option value="Real estate">REAL ESTATE</option>
+                                        <option value="Services">SERVICES</option>
+                                        <option value="Logistics">LOGISTICS</option>
+                                        <option value="Tech / Software">TECH/SOFTWARE</option>
+                                        <option value="Retail">RETAIL</option>
+                                        <option value="Automation">AUTOMATION</option>
+                                        <option value="Others">OTHERS</option>
+                                    </select><br><br>
+                                    <label>Business Category</label><br>
+                                    <select name="category">
+                                        <option value="B2B">B2B ( Transaction/Business between Wholesale & Retailer)</option>
+                                        <option value="B2C">B2C( Selling Products & services directly to consumers/End users)</option>
+                                        <option value="B2B2C">B2B2C ( Both of the Above)</option>
+                                        <option value="D2C">D2C ( Direct to Customer)</option>
+                                        <option value="other">OTHER</option>
+                                    </select><br><br>
+                                    <label>Define Your Idea</label>
+                                    <label>Your Business is trying to solve</label>
+                                    <textarea type="text" name="solution_to" placeholder="Solving (100 Words)"></textarea><br>
+
+                                    <label>How are you solving it</label>
+                                    <textarea type="text" name="your_solution" placeholder="Define Business Idea (100 Words)"></textarea><br>
+
+                                    <label>What are your business competitors</label>
+                                    <textarea type="text" name="competitors" placeholder="Define Business Idea (100 Words)"></textarea><br>
+                                    <label>Define Your Revenue Model</label>
+                                    <textarea type="text" name="revenue" placeholder="Define Business Idea (100 Words)"></textarea><br>
+                                    <label>Latest funds raised through</label><br>
+                                    <select name="last_funding">
+                                        <option value="BOOTSTRAPPED">BOOTSTRAPPED</option>
+                                        <option value="SEED FUNDING">SEED FUNDING</option>
+                                        <option value="ANGEL FUNDING">ANGEL FUNDING</option>
+                                        <option value="PRESERIES">PRESERIES A</option>
+                                        <option value="SERIES A">SERIES A</option>
+                                        <option value="SERIES A & ABOVE">SERIES A & ABOVE</option>
+                                    </select><br><br>
+                                    <label>Funding Needed</label>
+                                      <input type="number" name="kuberan_house" placeholder="Funding needed" /> 
+                                      <label>Share Ratio Offered</label> 
+                                      <input type="number" name="share" placeholder="Share Ratio Offered" />    
+
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Other Information</h2>
+                                    <label>From where did you hear about us</label>
+                                    <textarea type="text" name="heard_from" placeholder="Heard from"></textarea><br>
+                                    <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
+                                    <select name="part">
+                                        <option value="yes">Yes</option>
+                                       
+                                        <option value="no" selected="selected">No</option>
+                                    </select><br><br> <input type="text" name="part_name" id="part" class="d-none" placeholder="Name"/><br>
+                                    <label>  DO YOU HOLD THE IP/PATENT/TRADEMARK/COPYRIGHTS FOR YOUR IDEA/PRODUCT</label>
+                                    <select name="hold">
+                                        <option value="yes">Yes</option>
+                                       
+                                        <option value="no" selected="selected">No</option>
+                                    </select><br><br> <input type="text" name="hold_name" id="hold" class="d-none" placeholder="Name"/><br>
+                                   
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title text-center">Attachments </h2> <br><br>
+                                    <label>Pitch Deck (example: <a target="_blank" style="color: unset;" href="https://www.irjet.net/archives/V7/i5/IRJET-V7I5210.pdf">Pitch Deck</a>)</label><br>
+                                    <input type="file" name="pitchDeck" placeholder="pitch Deck"/>
+                                    <label>Video </label><br>
+                                    <input type="file" name="video" placeholder="Video"/>
+                                    <label>Business Images (upto 5 Images)</label>
+                                    <input type="file" name="images[]" onchange="checkFiles(this.files, 5)" placeholder="Business Images" id="business_img" multiple="multiple" />
+                                    <label>  Why you should be shortlisted</label>
+                                    <textarea type="text" name="why" placeholder="Define in 100 Words"></textarea><br>
+                                    <input style="width: 26px;" type="checkbox" />Terms and Conditions<br>
+                                </div>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <div class="d-flex align-item-center justify-content-center">
+                                    <button name="submit" class="w-75 btn_snd">Submit</button>                                   
+                                </div>                                  
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>         
+</body>
+<script>
+
+function checkFiles(files, total) {       
+    if(files.length>total) {
+        alert("Only 5 files allowed, few files have been truncated!");
+
+        let list = new DataTransfer;
+        for(let i=0; i<total; i++)
+           list.items.add(files[i]) 
+
+        document.getElementById('business_img').files = list.files
+    }       
+}
+
+$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+
+$('input[name="type"]').change(function() {
+    if ($(this).attr('value') === 'entreprenuer') {
+        $('#title').text('Entreprenuer');
+    } 
+    if ($(this).attr('value') === 'ideator') {
+        $('#title').text('Ideator');
+    }  
+})
+
+$('select[name="part"]').change(function() {
+    if ($(this).val() == 'yes') {
+        $('#part').removeClass('d-none');
+    } else {
+        $('#part').addClass('d-none');
+    }
+});
+
+$('select[name="hold"]').change(function() {
+    if ($(this).val() == 'yes') {
+        $('#hold').removeClass('d-none');
+    } else {
+        $('#hold').addClass('d-none');
+    }
+});
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$('.radio-group .radio').click(function(){
+$(this).parent().find('.radio').removeClass('selected');
+$(this).addClass('selected');
+});
+
+$(".submit").click(function(){
+return false;
+})
+
+});
+</script>
+</html>
