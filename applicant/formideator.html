@@ -71,11 +71,13 @@
                                         </div>                                        
                                     </div><br><br>
                                     <label>First Name</label>
-                                    <input type="text" name="first_name" placeholder="First Name" /> 
+                                    <input type="text" name="first_name" id="first_name" placeholder="First Name" pattern="[A-Za-z]+" required />
+                                    <span class="err" for="first_name"></span> 
                                     <label>Last Name</label>                                    
-                                    <input type="text" name="last_name" placeholder="Last Name" /> 
+                                    <input type="text" name="last_name" id="last_name" placeholder="Last Name" pattern="[A-Za-z]+" required /> <span class="err" for="last_name"></span>
                                     <label>Date of Birth</label><br>
-                                    <input type="date" name="dob" placeholder="Date of Birth Name" />
+                                    <input type="date" id="dob" name="dob" placeholder="Date of Birth Name" required />
+                                    <span class="err" for="dob"></span>
                                     <Label>Gender</Label><br>
                                     <select name="gender">
                                         <option value="male" selected>Male</option>
@@ -83,23 +85,30 @@
                                         <option value="other">Others</option>
                                     </select><br><br>
                                     <label>Email</label>
-                                    <input type="email" name="email" placeholder="Email Id" /> 
+                                    <input type="email" id="email" name="email" placeholder="Email Id" required /> 
+                                    <span class="err" for="email"></span>
                                     <label>Mobile Number</label>
-                                    <input type="number" name="phone" placeholder="Mobile Number" /> 
-                                    <label>Second Mobile Number</label>
-                                    <input type="number" name="phone2" placeholder="Alternative Mobile Number" /> 
+                                    <input type="number" name="phone" id="phone" placeholder="Mobile Number" required /> 
+                                    <span class="err" for="phone"></span>
+                                    <label>Second Mobile Number (optional)</label>
+                                    <input type="number" name="phone2" id="phone2" placeholder="Alternative Mobile Number" /> 
+                                    <span class="err" for="phone2"></span>
                                     <label>Aadhar Card Number</label>
-                                    <input type="number" name="aadhar_number" placeholder="Aadhar Card Number" />
+                                    <input type="number" name="aadhar_number" id="aadhar_number" placeholder="Aadhar Card Number" required />
+                                    <span class="err" for="aadhar_number"></span>
                                     <label>Flat Number</label>
                                     <input type="text" name="flat" placeholder="Flat" />  
                                     <label>Street Name</label>
-                                    <input type="text" name="street" placeholder="Street" />  
+                                    <input type="text" name="street" id="street" placeholder="Street" required />  
+                                    <span class="err" for="street"></span>
                                     <label>Area</label>
                                     <input type="text" name="area" placeholder="Area" />  
                                     <label>City</label>
-                                    <input type="text" name="city" placeholder="City" />  
+                                    <input type="text" name="city" placeholder="City" required />
+                                    <span class="err" for="street"></span>  
                                     <label>State</label>
-                                    <input type="text" name="state" placeholder="State" />  
+                                    <input type="text" name="state" id="state" placeholder="State" required />
+                                    <span class="err" for="state"></span>  
                                     <br>
                                     <Label>Applying For</Label><br>
                                     <select name="apply_for">
@@ -111,7 +120,8 @@
                                         <option value="other"> OTHER</option>
                                     </select><br><br>
                                     <label>Company Name</label>
-                                    <input type="text" name="company_name" placeholder="Company Name" />  
+                                    <input type="text" name="company_name" id="company_name" placeholder="Company Name" pattern="[A-Za-z]+" required />
+                                    <span class="err" for="company_name"></span>  
                                     <Label>Nature of the Company</Label><br>
                                     <select name="nature">
                                         <option value="PRIVATE LIMITED" selected>PRIVATE LIMITED</option>
@@ -123,7 +133,8 @@
                                         <option value="other">Other</option>
                                     </select><br><br>
                                     <label>Incorporation Date</label><br>
-                                    <input type="date" name="incorporated_on" placeholder="Icorporated On" />
+                                    <input type="date" id="incorporated_on" name="incorporated_on" placeholder="Icorporated On" required />
+                                    <span class="err" for="incorporated_on"></span>
                                     <br>
                                     <Label>Number of Partners</Label><br>
                                     <select name="founder_count">
@@ -136,7 +147,8 @@
                                     </select><br><br>
                           
                                     <Label>Brief about Partners</Label><br>
-                                    <textarea name="profile_brief[0]" placeholder="Brief about them"></textarea>     
+                                    <textarea name="profile_brief[0]" id="profile_brief" placeholder="Brief about them" required></textarea> 
+                                    <span class="err" for="profile_brief"></span>    
                                 </div> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
@@ -173,15 +185,19 @@
                                     </select><br><br>
                                     <label>Define Your Idea</label>
                                     <label>Your Business is trying to solve</label>
-                                    <textarea type="text" name="solution_to" placeholder="Solving (100 Words)"></textarea><br>
+                                    <textarea type="text" name="solution_to" id="solution_to" placeholder="Solving (100 Words)" pattern="[A-Za-z]+" maxlength="100" required></textarea>
+                                    <span class="err" for="solution_to"></span><br>
 
                                     <label>How are you solving it</label>
-                                    <textarea type="text" name="your_solution" placeholder="Define Business Idea (100 Words)"></textarea><br>
+                                    <textarea type="text" name="your_solution" id="your_solution" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
+                                    <span class="err" for="your_solution"></span><br>
 
                                     <label>What are your business competitors</label>
-                                    <textarea type="text" name="competitors" placeholder="Define Business Idea (100 Words)"></textarea><br>
+                                    <textarea type="text" name="competitors" id="competitors" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
+                                    <span class="err" for="competitors"></span><br>
                                     <label>Define Your Revenue Model</label>
-                                    <textarea type="text" name="revenue" placeholder="Define Business Idea (100 Words)"></textarea><br>
+                                    <textarea type="text" name="revenue" id="revenue" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
+                                    <span class="err" for="revenue"></span><br>
                                     <label>Latest funds raised through</label><br>
                                     <select name="last_funding">
                                         <option value="BOOTSTRAPPED">BOOTSTRAPPED</option>
@@ -192,9 +208,11 @@
                                         <option value="SERIES A & ABOVE">SERIES A & ABOVE</option>
                                     </select><br><br>
                                     <label>Funding Needed</label>
-                                      <input type="number" name="kuberan_house" placeholder="Funding needed from Kuberan House" /> 
+                                      <input type="number" name="kuberan_house" id="kuberan_house" placeholder="Funding needed from Kuberan House" required/>
+                                      <span class="err" for="kuberan_house"></span> 
                                       <label>Share Ratio Offered</label> 
-                                      <input type="number" name="share" placeholder="Share Ratio Offered" />    
+                                      <input type="number" name="share" id="share" placeholder="Share Ratio Offered" required />
+                                      <span class="err" for="share"></span>    
 
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -202,7 +220,8 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Other Information</h2>
                                     <label>From where did you hear about us</label>
-                                    <textarea type="text" name="heard_from" placeholder="Heard from"></textarea><br>
+                                    <textarea type="text" id="heard_from" name="heard_from" placeholder="Heard from" pattern="[A-Za-z]+" maxlength="100" required></textarea>
+                                    <span class="err" for="heard_from"></span><br>
                                     <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
                                     <select name="part">
                                         <option value="yes">Yes</option>
@@ -214,16 +233,16 @@
                                         <option value="yes">Yes</option>
                                        
                                         <option value="no" selected="selected">No</option>
-                                    </select><br><br> <input type="text" name="hold_name" id="hold" class="d-none" placeholder="Name"/><br>
+                                    </select><br><br> <input type="text" name="hold_name" id="hold" class="d-none" placeholder="Name" /><br>
                                    
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title text-center">Attachments </h2> <br><br>
-                                    <label>Pitch Deck (example: <a target="_blank" style="color: unset;" href="https://www.irjet.net/archives/V7/i5/IRJET-V7I5210.pdf">Pitch Deck</a>)</label><br>
-                                    <input type="file" name="pitchDeck" placeholder="pitch Deck"/>
-                                    <label>Video </label><br>
+                                    <label>Pitch Deck (Maximum Size upto 10MB) <br>(example: <a target="_blank" style="color: unset;" href="https://www.irjet.net/archives/V7/i5/IRJET-V7I5210.pdf">Pitch Deck</a>)</label><br>
+                                    <input type="file" name="pitchDeck" placeholder="pitch Deck" required /><span class="err" for="pitchDeck" required></span>
+                                    <label>Video (Optional) (Maximum Size 20MB) </label><br>
                                     <input type="file" name="video" placeholder="Video"/>
                                     <label>Business Images (upto 5 Images)</label>
                                     <input type="file" name="images[]" onchange="checkFiles(this.files, 5)" placeholder="Business Images" id="business_img" multiple="multiple" />
