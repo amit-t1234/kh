@@ -94,7 +94,8 @@
 		} else {
 			/* Create a prepared statement */
 			try {
-				$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register, userid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				$stmt = 
+				$stmt = $mysqli->prepare("INSERT INTO users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register, userid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 				$stmt->bind_param("ssssssssssis", $aadhar_number, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $phone2, $apply_for, $company_register, $userid);
 				if ($stmt->execute()) {
 					echo $company_name.' '.$nature.' '.$incorporated_on.' '.$founder_count;
@@ -107,6 +108,7 @@
 						$stmt->bind_param("ss", $aadhar_number, $profile_brief);
 						$stmt->execute();
 					}
+					echo $aadhar_number, $sector, $category, $idea, $solution_to, $your_solution, $competitors, $last_funding, $revenue, $kuberan_house, $share;
 					$stmt = $mysqli->prepare("INSERT INTO business (aadhar_number, sector, category, idea, solution_to, your_solution, competitors, last_funding, revenue, kuberan_house, share) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 					$stmt->bind_param("sssssssssdd", $aadhar_number, $sector, $category, $idea, $solution_to, $your_solution, $competitors, $last_funding, $revenue, $kuberan_house, $share);
 					$stmt->execute();
@@ -120,7 +122,7 @@
 					$stmt->execute();
 					print_r($_FILES);
 					if ($_FILES['pitchDeck'])
-						$pitch_deck = getFileUrl($_FILES['pitchDeck'], array('jpg', 'jpeg', 'png'), 'pitchDecks');
+						$pitch_deck = getFileUrl($_FILES['pitchDeck'], array('jpg', 'jpeg', 'png', 'pdf'), 'pitchDecks');
 					else
 						$pitch_deck = '';
 					// if ($_FILES['aadhar_img'])
@@ -165,7 +167,7 @@
 					} else{
 					    echo 'Unable to send email. Please try again.';
 					}					
-					header("Location: ../form.html?success=1");
+					header("Location: ../choose.html?success=1");
 				}
 				else {
 					echo $mysqli->error;

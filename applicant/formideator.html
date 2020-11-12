@@ -71,12 +71,12 @@
                                         </div>                                        
                                     </div><br><br>
                                     <label>First Name</label>
-                                    <input type="text" name="first_name" id="first_name" placeholder="First Name" pattern="[A-Za-z]+" required />
+                                    <input type="text" name="first_name" onfocusout="validate(this)" id="first_name" placeholder="First Name" pattern="[A-Za-z]+" required />
                                     <span class="err" for="first_name"></span> 
                                     <label>Last Name</label>                                    
-                                    <input type="text" name="last_name" id="last_name" placeholder="Last Name" pattern="[A-Za-z]+" required /> <span class="err" for="last_name"></span>
+                                    <input type="text" name="last_name" onfocusout="validate(this)" id="last_name" placeholder="Last Name" pattern="[A-Za-z]+" required /> <span class="err" for="last_name"></span>
                                     <label>Date of Birth</label><br>
-                                    <input type="date" id="dob" name="dob" placeholder="Date of Birth Name" required />
+                                    <input type="date" id="dob" name="dob" onfocusout="validate(this)" placeholder="Date of Birth Name" required />
                                     <span class="err" for="dob"></span>
                                     <Label>Gender</Label><br>
                                     <select name="gender">
@@ -85,29 +85,29 @@
                                         <option value="other">Others</option>
                                     </select><br><br>
                                     <label>Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Email Id" required /> 
+                                    <input type="email" id="email" name="email" onfocusout="validate(this)" placeholder="Email Id" required /> 
                                     <span class="err" for="email"></span>
                                     <label>Mobile Number</label>
-                                    <input type="number" name="phone" id="phone" placeholder="Mobile Number" required /> 
+                                    <input type="text" name="phone" id="phone" onfocusout="validate(this)" placeholder="Mobile Number" pattern="^[6-9]\d{9}$" required /> 
                                     <span class="err" for="phone"></span>
                                     <label>Second Mobile Number (optional)</label>
-                                    <input type="number" name="phone2" id="phone2" placeholder="Alternative Mobile Number" /> 
+                                    <input type="text" name="phone2" id="phone2" pattern="^[6-9]\d{9}$" placeholder="Alternative Mobile Number" /> 
                                     <span class="err" for="phone2"></span>
                                     <label>Aadhar Card Number</label>
-                                    <input type="number" name="aadhar_number" id="aadhar_number" placeholder="Aadhar Card Number" required />
+                                    <input type="number" name="aadhar_number" onfocusout="validate(this)" id="aadhar_number" placeholder="Aadhar Card Number" required />
                                     <span class="err" for="aadhar_number"></span>
                                     <label>Flat Number</label>
-                                    <input type="text" name="flat" placeholder="Flat" />  
+                                    <input type="text" name="flat" onfocusout="validate(this)" placeholder="Flat" />  
                                     <label>Street Name</label>
-                                    <input type="text" name="street" id="street" placeholder="Street" required />  
+                                    <input type="text" name="street" onfocusout="validate(this)" id="street" placeholder="Street" required />  
                                     <span class="err" for="street"></span>
                                     <label>Area</label>
-                                    <input type="text" name="area" placeholder="Area" />  
+                                    <input type="text" name="area" onfocusout="validate(this)" placeholder="Area" />  
                                     <label>City</label>
-                                    <input type="text" name="city" placeholder="City" required />
-                                    <span class="err" for="street"></span>  
+                                    <input type="text" name="city" onfocusout="validate(this)" placeholder="City" required />
+                                    <span class="err" for="city"></span>  
                                     <label>State</label>
-                                    <input type="text" name="state" id="state" placeholder="State" required />
+                                    <input type="text" name="state" onfocusout="validate(this)" id="state" placeholder="State" required />
                                     <span class="err" for="state"></span>  
                                     <br>
                                     <Label>Applying For</Label><br>
@@ -120,7 +120,7 @@
                                         <option value="other"> OTHER</option>
                                     </select><br><br>
                                     <label>Company Name</label>
-                                    <input type="text" name="company_name" id="company_name" placeholder="Company Name" pattern="[A-Za-z]+" required />
+                                    <input type="text" name="company_name" onfocusout="validate(this)" id="company_name" placeholder="Company Name" pattern="[A-Za-z]+" required />
                                     <span class="err" for="company_name"></span>  
                                     <Label>Nature of the Company</Label><br>
                                     <select name="nature">
@@ -133,7 +133,7 @@
                                         <option value="other">Other</option>
                                     </select><br><br>
                                     <label>Incorporation Date</label><br>
-                                    <input type="date" id="incorporated_on" name="incorporated_on" placeholder="Icorporated On" required />
+                                    <input type="date" id="incorporated_on" name="incorporated_on" onfocusout="validate(this)" placeholder="Icorporated On" required />
                                     <span class="err" for="incorporated_on"></span>
                                     <br>
                                     <Label>Number of Partners</Label><br>
@@ -147,7 +147,7 @@
                                     </select><br><br>
                           
                                     <Label>Brief about Partners</Label><br>
-                                    <textarea name="profile_brief[0]" id="profile_brief" placeholder="Brief about them" required></textarea> 
+                                    <textarea name="profile_brief[0]" onfocusout="validate(this)" id="profile_brief" placeholder="Brief about them" required></textarea> 
                                     <span class="err" for="profile_brief"></span>    
                                 </div> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -184,19 +184,21 @@
                                         <option value="other">OTHER</option>
                                     </select><br><br>
                                     <label>Define Your Idea</label>
+                                    <textarea type="text" name="idea" onfocusout="validate(this)" id="idea" placeholder="Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required></textarea>
+                                    <span class="err" for="idea"></span><br>                                    
                                     <label>Your Business is trying to solve</label>
-                                    <textarea type="text" name="solution_to" id="solution_to" placeholder="Solving (100 Words)" pattern="[A-Za-z]+" maxlength="100" required></textarea>
+                                    <textarea type="text" name="solution_to" onfocusout="validate(this)" id="solution_to" placeholder="Solving (100 Words)" pattern="[A-Za-z]+" maxlength="100" required></textarea>
                                     <span class="err" for="solution_to"></span><br>
 
                                     <label>How are you solving it</label>
-                                    <textarea type="text" name="your_solution" id="your_solution" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
+                                    <textarea type="text" name="your_solution" onfocusout="validate(this)" id="your_solution" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
                                     <span class="err" for="your_solution"></span><br>
 
                                     <label>What are your business competitors</label>
-                                    <textarea type="text" name="competitors" id="competitors" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
+                                    <textarea type="text" name="competitors" onfocusout="validate(this)" id="competitors" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
                                     <span class="err" for="competitors"></span><br>
                                     <label>Define Your Revenue Model</label>
-                                    <textarea type="text" name="revenue" id="revenue" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
+                                    <textarea type="text" name="revenue" onfocusout="validate(this)" id="revenue" placeholder="Define Business Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required ></textarea>
                                     <span class="err" for="revenue"></span><br>
                                     <label>Latest funds raised through</label><br>
                                     <select name="last_funding">
@@ -208,10 +210,10 @@
                                         <option value="SERIES A & ABOVE">SERIES A & ABOVE</option>
                                     </select><br><br>
                                     <label>Funding Needed</label>
-                                      <input type="number" name="kuberan_house" id="kuberan_house" placeholder="Funding needed from Kuberan House" required/>
+                                      <input type="number" name="kuberan_house" onfocusout="validate(this)" id="kuberan_house" placeholder="Funding needed from Kuberan House" required/>
                                       <span class="err" for="kuberan_house"></span> 
                                       <label>Share Ratio Offered</label> 
-                                      <input type="number" name="share" id="share" placeholder="Share Ratio Offered" required />
+                                      <input type="number" name="share" onfocusout="validate(this)" id="share" placeholder="Share Ratio Offered" required />
                                       <span class="err" for="share"></span>    
 
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
@@ -220,7 +222,7 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Other Information</h2>
                                     <label>From where did you hear about us</label>
-                                    <textarea type="text" id="heard_from" name="heard_from" placeholder="Heard from" pattern="[A-Za-z]+" maxlength="100" required></textarea>
+                                    <textarea type="text" id="heard_from" name="heard_from" onfocusout="validate(this)" placeholder="Heard from" pattern="[A-Za-z]+" maxlength="100" required></textarea>
                                     <span class="err" for="heard_from"></span><br>
                                     <label> ARE YOU PART OF ANY INITIATIVES/AFFILIATIONS/TRAINING/ INCUBATORS/ACCELERATORS</label>
                                     <select name="part">
@@ -263,6 +265,8 @@
     </div>
 </div>         
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
+<script src="js/store.js"></script>
 <script>
 
 function checkFiles(files, total) {       
@@ -275,6 +279,24 @@ function checkFiles(files, total) {
 
         document.getElementById('business_img').files = list.files
     }       
+}
+
+function validate(element) {
+    let id = $(element).attr('id');
+    if (!$(element).isValid()) {
+        valid = false;
+        $(`span[for="${id}"]`).text($(element).validMessage());
+    } else {
+        $(`span[for="${id}"]`).text('');
+    }
+}
+
+$.fn.isValid = function(){
+  return this[0].checkValidity()
+}
+
+$.fn.validMessage = function() {
+    return this[0].validationMessage;
 }
 
 $(document).ready(function(){
@@ -307,57 +329,74 @@ $('select[name="hold"]').change(function() {
     }
 });
 
+$('input').each(function (key, input) {
+    if($(input).attr('id'))
+        $(input).val(getCookie($(input).attr('id')));
+});
+
 $(".next").click(function(){
 
-current_fs = $(this).parent();
-next_fs = $(this).parent().next();
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+    let valid = true;
+    current_fs.find('input').each(function(key, element) {
+      let id = $(element).attr('id');
+      if (!$(element).isValid()) {
+        valid = false;
+        console.log($(element));
+        $(`span[for="${id}"]`).text($(element).validMessage());
+      } else {
+        setCookie(id, $(element).val());
+        $(`span[for="${id}"]`).text('');
+      }
+    });
+    console.log(valid);
+    if (!valid) return false;
+    //Add Class Active
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-//Add Class Active
-$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+        step: function(now) {
+        // for making fielset appear animation
+        opacity = 1 - now;
 
-//show the next fieldset
-next_fs.show();
-//hide the current fieldset with style
-current_fs.animate({opacity: 0}, {
-step: function(now) {
-// for making fielset appear animation
-opacity = 1 - now;
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-next_fs.css({'opacity': opacity});
-},
-duration: 600
-});
+        current_fs.css({
+        'display': 'none',
+        'position': 'relative'
+        });
+        next_fs.css({'opacity': opacity});
+        },
+        duration: 600
+    });
 });
 
 $(".previous").click(function(){
 
-current_fs = $(this).parent();
-previous_fs = $(this).parent().prev();
+    current_fs = $(this).parent();
+    previous_fs = $(this).parent().prev();
+    //Remove class active
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
-//Remove class active
-$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+        //show the previous fieldset
+        previous_fs.show();
 
-//show the previous fieldset
-previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+        step: function(now) {
+        // for making fielset appear animation
+        opacity = 1 - now;
 
-//hide the current fieldset with style
-current_fs.animate({opacity: 0}, {
-step: function(now) {
-// for making fielset appear animation
-opacity = 1 - now;
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-previous_fs.css({'opacity': opacity});
-},
-duration: 600
-});
+        current_fs.css({
+        'display': 'none',
+        'position': 'relative'
+        });
+        previous_fs.css({'opacity': opacity});
+        },
+        duration: 600
+    });
 });
 
 $('.radio-group .radio').click(function(){

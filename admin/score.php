@@ -149,7 +149,7 @@
           </nav>
         <!-- End of Topbar -->       
         <div class="container pb-3">
-        <form action="include/moderator.inc.php" method="POST">
+        <form action="include/score.inc.php" method="POST">
         <div class="row mt-3" style="color:black;font-weight:bold;">
              <div class="col-md-2">Active/Inactive</div>
              <div class="col-md-4">Item</div>
@@ -160,13 +160,23 @@
              <div class="col-md-4">Aadhar Number</div>
              <div class="col-md-4"><input class="form-control" type="number" name="aadhar_number[]" placeholder="50"/></div>
            </div>
+            <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="type[]" value="true" /></div>
+             <div class="col-md-4">Type</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="type[]" placeholder="50"/></div>
+           </div>           
            <div class="row mt-3">
              <div class="col-md-2"><input type="checkbox" name="first_name[]" value="true" /></div>
-             <div class="col-md-4">Name</div>
+             <div class="col-md-4">First Name</div>
              <div class="col-md-4"><input class="form-control" type="number" name="first_name[]" placeholder="50"/></div>
            </div>
+           <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="last_name[]" value="true" /></div>
+             <div class="col-md-4">Last Name</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="last_name[]" placeholder="50"/></div>
+           </div>           
                    <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" name="do[]b" value="true" /></div>
+             <div class="col-md-2"><input type="checkbox" name="dob[]" value="true" /></div>
              <div class="col-md-4">Date of Birth</div>
              <div class="col-md-4"><input class="form-control" type="number" name="dob[]" placeholder="50"/></div>
            </div>
@@ -181,106 +191,136 @@
              <div class="col-md-4"><input class="form-control" type="number" name="email[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" name="phone[]" /></div>
+             <div class="col-md-2"><input type="checkbox" name="phone[]" value="true" /></div>
              <div class="col-md-4"> Phone Number</div>
              <div class="col-md-4"><input class="form-control" type="number" name="phone[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" name="phone2[]" /></div>
+             <div class="col-md-2"><input type="checkbox" name="phone2[]" value="true" /></div>
              <div class="col-md-4"> Alternative Phone Number</div>
              <div class="col-md-4"><input class="form-control" type="number" name="phone2[]" placeholder="50"/></div>
            </div>
+            <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="apply_for[]" value="true" /></div>
+             <div class="col-md-4"> Apply For</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="apply_for[]" placeholder="50"/></div>
+           </div> 
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="profile_brief[]" value="true" /></div>
+             <div class="col-md-4"> Profile Brief</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="profile_brief[]" placeholder="50"/></div>
+           </div> 
+                  <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="heard_from[]" value="true" /></div>
+             <div class="col-md-4"> Heard From</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="heard_from[]" placeholder="50"/></div>
+           </div>                               
+                  <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="company_name[]" value="true" /></div>
              <div class="col-md-4"> Company Name</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="company_name" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="company_name[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="nature[]" value="true" /></div>
              <div class="col-md-4"> Company Nature</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="nature" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="nature[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="incorporated_on[]" value="true" /></div>
              <div class="col-md-4"> Incorporated On</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="incorporated_on" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="incorporated_on[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="founder_count[]" value="true" /></div>
              <div class="col-md-4"> Founder Count</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="founder_count" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="founder_count[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="pitch_deck[]" value="true" /></div>
              <div class="col-md-4"> Pitch Deck</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="pitch_deck" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="pitch_deck[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="aadhar_img[]"  value="true"/></div>
              <div class="col-md-4"> Aadhar Image</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="aadhar_img" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="aadhar_img[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="video[]" value="true" /></div>
              <div class="col-md-4"> Video</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="Video" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="Video[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="image[]" value="true" /></div>
              <div class="col-md-4"> Images</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="image" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="image[]" placeholder="50"/></div>
            </div>
                    <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="sector[]" value="true" /></div>
              <div class="col-md-4">Sector</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="sector" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="sector[]" placeholder="50"/></div>
            </div>
                    <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="category[]" value="true" /></div>
              <div class="col-md-4">Category</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="category" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="category[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="idea[]" value="true" /></div>
              <div class="col-md-4"> Idea</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="idea" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="idea[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="solution_to[]" value="true" /></div>
              <div class="col-md-4"> Solution To </div>
-             <div class="col-md-4"><input class="form-control" type="number" name="solution_to" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="solution_to[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="your_solution[]" value="true" /></div>
              <div class="col-md-4"> How it solves</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="your_solution" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="your_solution[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="competitors[]" value="true" /></div>
              <div class="col-md-4"> Competitors</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="competitors" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="competitors[]" placeholder="50"/></div>
            </div>
                    <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="last_funding[]" value="true" /></div>
              <div class="col-md-4">Last Funding </div>
-             <div class="col-md-4"><input class="form-control" type="number" name="last_funding" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="last_funding[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="part[]" value="true" /></div>
+             <div class="col-md-4"> Part of Any Firm</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="part[]" placeholder="50"/></div>
+           </div>
+ <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="hold[]" value="true" /></div>
+             <div class="col-md-4"> Hold</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="hold[]" placeholder="50"/></div>
+           </div>                      
+ <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="why[]" value="true" /></div>
+             <div class="col-md-4"> Why should we fund you?</div>
+             <div class="col-md-4"><input class="form-control" type="number" name="why[]" placeholder="50"/></div>
+           </div>           
+                  <div class="row mt-3">
+             <div class="col-md-2"><input type="checkbox" name="revenue[]" value="true" /></div>
              <div class="col-md-4"> Revenue</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="revenue" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="revenue[]" placeholder="50"/></div>
            </div>
                   <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="kuberan_house[]" value="true" /></div>
              <div class="col-md-4"> Funds Needed</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="kuberan_house" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="kuberan_house[]" placeholder="50"/></div>
            </div>
             <div class="row mt-3">
-             <div class="col-md-2"><input type="checkbox" /></div>
+             <div class="col-md-2"><input type="checkbox" name="share[]" value="true" /></div>
              <div class="col-md-4"> Share offered</div>
-             <div class="col-md-4"><input class="form-control" type="number" name="share" placeholder="50"/></div>
+             <div class="col-md-4"><input class="form-control" type="number" name="share[]" placeholder="50"/></div>
            </div>
-           <button class="btn btn-lg btn-success">Apply</button>
+           <button name="submit" class="btn btn-lg btn-success">Apply</button>
          </form>
            </div>
         <!-- Begin Page Content -->
