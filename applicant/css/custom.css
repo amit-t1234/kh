@@ -1210,7 +1210,8 @@ footer span {
 }
 .details_left {
 	display: inline-block;
-	width: 10%;
+	width: 30%;
+	text-align: right;
 }
 .details_right {
 	display: inline-block;
@@ -1602,7 +1603,7 @@ footer span {
 }
 .contact_details .details_right {
 	display: inline-block;
-	width: 85%;
+	width: 65%;
 	vertical-align: top;
 	font-size: 15px;
 	font-weight: 500;
