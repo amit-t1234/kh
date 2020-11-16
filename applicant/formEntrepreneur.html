@@ -97,19 +97,21 @@
                                     <label>Second Mobile Number (optional)</label>
                                     <input type="number" name="phone2" id="phone2" placeholder="Alternative Mobile Number" /> 
                                     <span class="err" for="phone2"></span>
-                                    <label>Aadhar Card Number</label>
-                                    <input type="number" name="aadhar_number" id="aadhar_number" placeholder="Aadhar Card Number" required />
+                                    
                                     <span class="err" for="aadhar_number"></span>
-                                    <label>Flat Number</label>
+                                    <label>Flat/Door Number</label>
                                     <input type="text" name="flat" placeholder="Flat" />  
-                                    <label>Street Name</label>
+                                    <label>Street/Area Name</label>
                                     <input type="text" name="street" id="street" placeholder="Street" required />  
                                     <span class="err" for="street"></span>
                                     <label>Area</label>
                                     <input type="text" name="area" placeholder="Area" />  
                                     <label>City</label>
                                     <input type="text" name="city" placeholder="City" required />
+
                                     <span class="err" for="street"></span>  
+                                    <label>Pin Code</label>
+                                    <input type="number" name="city" onfocusout="validate(this)" placeholder="PIN Code" required />
                                     <label>State</label>
                                     <input type="text" name="state" id="state" placeholder="State" required />
                                     <span class="err" for="state"></span>  
