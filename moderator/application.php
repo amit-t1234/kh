@@ -134,84 +134,113 @@
   
           </nav>
         <!-- End of Topbar -->
-        <div class="container pb-3">
+      <div class="container pb-3">
+        <form action="include/score.inc.php" method="POST">
         <div class="row mt-3" style="color:black;font-weight:bold;">
              <div class="col-md-4">Field</div>
              <div class="col-md-4">Value</div>
+             <div class="col-md-4">Score</div>
            </div>
             <?php
-              $stmt = $mysqli->prepare("SELECT * FROM Users u JOIN Extras e ON u.aadhar_number = e.aadhar_number AND userid=? JOIN company c ON u.aadhar_number = c.aadhar_number JOIN Profiles p ON c.aadhar_number = p.aadhar_number JOIN Attachments a ON a.aadhar_number = u.aadhar_number JOIN Business b ON b.aadhar_number = u.aadhar_number AND sector=? ORDER BY created_on ASC");
+              $stmt = $mysqli->prepare("SELECT * FROM score WHERE track=1");
+              $stmt->execute();
+              $result = $stmt->get_result();
+              $score = $result->fetch_assoc();
+              $stmt = $mysqli->prepare("SELECT * FROM score WHERE track=?");
+              $stmt->bind_param('s', $_GET['userid']);              
+              $stmt->execute();
+              $result = $stmt->get_result();
+              $get = $result->fetch_assoc();                           
+              $stmt = $mysqli->prepare("SELECT * FROM Users u JOIN Extras e ON u.userid = e.userid AND u.userid=? JOIN company c ON u.userid = c.userid JOIN Profiles p ON c.userid = p.userid JOIN Attachments a ON a.userid = u.userid JOIN Business b ON b.userid = u.userid AND sector=? ORDER BY created_on ASC");
               $stmt->bind_param('ss', $_GET['userid'], $_SESSION['sector']);
               $stmt->execute();
               $result = $stmt->get_result();
               $row = $result->fetch_assoc();
-            ?>          
-            <div class="row mt-3">
-
-             <div class="col-md-4">Aadhar Number</div>
-             <div class="col-md-4"><?php echo $row["aadhar_number"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
-           </div>
-            <div class="row mt-3">
-
-             <div class="col-md-4">Name</div>
-             <div class="col-md-4"><?php echo $row["first_name"].' '.$row["last_name"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
-           </div>
+            ?> 
+            <?php if ($score['first_name']) { ?>         
               <div class="row mt-3">
-
-             <div class="col-md-4">Date of Birth</div>
-             <div class="col-md-4"><?php echo $row["dob"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
-           </div>
+               <div class="col-md-4">Name</div>
+               <div class="col-md-4"><?php echo $row["first_name"].' '.$row["last_name"] ?></div>
+               <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['first_name']))? $get['first_name']: 0; ?>" max="<?php echo $score['first_name']; ?>" name="first_name"> / <?php echo $score['first_name']; ?> </div>
+             </div>
+           <?php } ?>
+            <?php if ($score['type']) { ?>         
               <div class="row mt-3">
-
-             <div class="col-md-4">Gender</div>
-             <div class="col-md-4"><?php echo $row["gender"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
-           </div>
+               <div class="col-md-4">Type</div>
+               <div class="col-md-4"><?php echo $row["type"] ?></div>
+               <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['type']))? $get['type']: 0; ?>" max="<?php echo $score['type']; ?>" name="type"> / <?php echo $score['type']; ?> </div>
+             </div>
+           <?php } ?>           
+            <?php if ($score['dob']) { ?>                    
+              <div class="row mt-3">
+               <div class="col-md-4">Date of Birth</div>
+               <div class="col-md-4"><?php echo $row["dob"] ?></div>
+               <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['dob']))? $get['dob']: 0; ?>" max="<?php echo $score['dob']; ?>" name="dob"> / <?php echo $score['dob']; ?> </div>
+              </div>
+            <?php } ?>
+            <?php if ($score['gender']) { ?>                    
+              <div class="row mt-3">
+                <div class="col-md-4">Gender</div>
+                <div class="col-md-4"><?php echo $row["gender"] ?></div>
+                <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['gender']))? $get['gender']: 0; ?>" max="<?php echo $score['gender']; ?>" name="gender"> / <?php echo $score['gender']; ?> </div>
+              </div>
+            <?php } ?>
+            <?php if ($score['email']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Email ID</div>
              <div class="col-md-4"><?php echo $row["email"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['email']))? $get['email']: 0; ?>" max="<?php echo $score['email']; ?>" name="email"> / <?php echo $score['email']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['phone']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Phone Number</div>
              <div class="col-md-4"><?php echo $row["phone"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['phone']))? $get['phone']: 0; ?>" max="<?php echo $score['phone']; ?>" name="phone"> / <?php echo $score['phone']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['phone2']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Alternative Phone Number</div>
              <div class="col-md-4"><?php echo $row["phone2"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['phone2']))? $get['phone2']: 0; ?>" max="<?php echo $score['phone2']; ?>" name="phone2"> / <?php echo $score['phone2']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['company_name']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Company Name</div>
              <div class="col-md-4"><?php echo $row["company_name"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['company_name']))? $get['company_name']: 0; ?>" max="<?php echo $score['company_name']; ?>" name="company_name"> / <?php echo $score['company_name']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['nature']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Company Nature</div>
              <div class="col-md-4"><?php echo $row["nature"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['nature']))? $get['nature']: 0; ?>" max="<?php echo $score['nature']; ?>" name="nature"> / <?php echo $score['nature']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['incorporated_on']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Incorporated On</div>
              <div class="col-md-4"><?php echo $row["incorporated_on"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['incorporated_on']))? $get['incorporated_on']: 0; ?>" max="<?php echo $score['incorporated_on']; ?>" name="incorporated_on"> / <?php echo $score['incorporated_on']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['founders_count']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Founder Count</div>
              <div class="col-md-4"><?php echo $row["founders_count"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['founders_count']))? $get['founders_count']: 0; ?>" max="<?php echo $score['founders_count']; ?>" name="founders_count"> / <?php echo $score['founders_count']; ?> </div>
            </div>
+         <?php } ?>
 <!--             <div class="row mt-3">
 
              <div class="col-md-4"> Pitch Deck</div>
@@ -236,69 +265,89 @@
              <div class="col-md-4"><?php echo $row["image"] ?></div>
              <div class="col-md-4"><input type="number" name="score"> / 50 </div>
            </div> -->
+            <?php if ($score['sector']) { ?>           
              <div class="row mt-3">
-
              <div class="col-md-4">Sector</div>
              <div class="col-md-4"><?php echo $row["sector"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['sector']))? $get['sector']: 0; ?>" max="<?php echo $score['sector']; ?>" name="sector"> / <?php echo $score['sector']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['category']) { ?>           
              <div class="row mt-3">
 
              <div class="col-md-4">Category</div>
              <div class="col-md-4"><?php echo $row["category"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['category']))? $get['category']: 0; ?>" max="<?php echo $score['category']; ?>" name="category"> / <?php echo $score['category']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['idea']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Idea</div>
              <div class="col-md-4"><?php echo $row["idea"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['idea']))? $get['idea']: 0; ?>" max="<?php echo $score['idea']; ?>" name="idea"> / <?php echo $score['idea']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['solution_to']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Solution To </div>
              <div class="col-md-4"><?php echo $row["solution_to"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['solution_to']))? $get['solution_to']: 0; ?>" max="<?php echo $score['solution_to']; ?>" name="solution_to"> / <?php echo $score['solution_to']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['your_solution']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> How it solves</div>
              <div class="col-md-4"><?php echo $row["your_solution"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['your_solution']))? $get['your_solution']: 0; ?>" max="<?php echo $score['your_solution']; ?>" name="your_solution"> / <?php echo $score['your_solution']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['competitors']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Competitors</div>
              <div class="col-md-4"><?php echo $row["competitors"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['competitors']))? $get['competitors']: 0; ?>" max="<?php echo $score['competitors']; ?>" name="competitors"> / <?php echo $score['competitors']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['last_funding']) { ?>           
               <div class="row mt-3">
 
              <div class="col-md-4">Last Funding </div>
              <div class="col-md-4"><?php echo $row["last_funding"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['last_funding']))? $get['last_funding']: 0; ?>" max="<?php echo $score['last_funding']; ?>" name="last_funding"> / <?php echo $score['last_funding']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['revenue']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Revenue</div>
              <div class="col-md-4"><?php echo $row["revenue"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['revenue']))? $get['revenue']: 0; ?>" max="<?php echo $score['revenue']; ?>" name="revenue"> / <?php echo $score['revenue']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['kuberan_house']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Funds Needed</div>
              <div class="col-md-4"><?php echo $row["kuberan_house"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['kuberan_house']))? $get['kuberan_house']: 0; ?>" max="<?php echo $score['kuberan_house']; ?>" name="kuberan_house"> / <?php echo $score['kuberan_house']; ?> </div>
            </div>
+         <?php } ?>
+            <?php if ($score['share']) { ?>           
             <div class="row mt-3">
 
              <div class="col-md-4"> Share offered</div>
              <div class="col-md-4"><?php echo $row["share"] ?></div>
-             <div class="col-md-4"><input type="number" name="score"> / 50 </div>
+             <div class="col-md-4"><input type="number" min="0" value="<?php echo (isset($get['share']))? $get['share']: 0; ?>" max="<?php echo $score['share']; ?>" name="share"> / <?php echo $score['share']; ?> </div>
            </div>
-           <button class="btn btn-lg btn-success">Submit</button>
-           <button class="btn btn-lg btn-primary">Escalate</button>
-           </div>
+         <?php } ?>
+          <input type="hidden" name="track" value="<?php echo $row['userid']; ?>">
+           <button name="submit" value="submit" class="btn btn-lg btn-success">Submit</button>
+           <button name="submit" value="escalate" class="btn btn-lg btn-primary">Escalate</button>
+        </div>
         <!-- Begin Page Content -->
     
         <!-- /.container-fluid -->

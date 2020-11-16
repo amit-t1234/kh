@@ -48,7 +48,6 @@
 	if (isset($_POST['submit'])) {
 		
 		include_once 'dbh.inc.php';
-		$aadhar_number = $_POST['aadhar_number'];
 		$type = $_POST['type'];								
 		$first_name = $_POST['first_name'];						
 		$last_name = $_POST['last_name'];						
@@ -87,35 +86,35 @@
 
 		// check the inputs
 		// check for empty fields
-		if (empty($aadhar_number) || empty($first_name) || empty($last_name) || empty($dob) || empty($gender) || empty($email) || empty($phone) || empty($apply_for)) {
+		if (empty($userid) || empty($first_name) || empty($last_name) || empty($dob) || empty($gender) || empty($email) || empty($phone) || empty($apply_for)) {
 			header("Location: ../signup.php?signup=503");
 			exit();
 		} else {
 			/* Create a prepared statement */
 			try {
-				$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-				$stmt->bind_param("ssssssssssi", $aadhar_number, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $phone2, $apply_for, $company_register);
+				$stmt = $mysqli->prepare("INSERT INTO Users (userid, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				$stmt->bind_param("ssssssssssi", $userid, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $phone2, $apply_for, $company_register);
 				if ($stmt->execute()) {
 					echo $company_name.' '.$nature.' '.$incorporated_on.' '.$founder_count;
-					$stmt = $mysqli->prepare("INSERT INTO company (aadhar_number, company_name, nature, incorporated_on, founders_count) VALUES (?, ?, ?, ?, ?)");
-					$stmt->bind_param("ssssi", $aadhar_number, $company_name, $nature, $incorporated_on, $founders_count);
+					$stmt = $mysqli->prepare("INSERT INTO company (userid, company_name, nature, incorporated_on, founders_count) VALUES (?, ?, ?, ?, ?)");
+					$stmt->bind_param("ssssi", $userid, $company_name, $nature, $incorporated_on, $founders_count);
 					echo 'yes yes!';
 					$stmt->execute();
 					foreach($profile_briefs as $profile_brief) {
-						$stmt = $mysqli->prepare("INSERT INTO Profiles (aadhar_number, profile_brief) VALUES (?, ?)");
-						$stmt->bind_param("ss", $aadhar_number, $profile_brief);
+						$stmt = $mysqli->prepare("INSERT INTO Profiles (userid, profile_brief) VALUES (?, ?)");
+						$stmt->bind_param("ss", $userid, $profile_brief);
 						$stmt->execute();
 					}
-					$stmt = $mysqli->prepare("INSERT INTO business (aadhar_number, sector, category, idea, solution_to, your_solution, competitors, last_funding, revenue, kuberan_house, share) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-					$stmt->bind_param("sssssssssdd", $aadhar_number, $sector, $category, $idea, $solution_to, $your_solution, $competitors, $last_funding, $revenue, $kuberan_house, $share);
+					$stmt = $mysqli->prepare("INSERT INTO business (userid, sector, category, idea, solution_to, your_solution, competitors, last_funding, revenue, kuberan_house, share) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+					$stmt->bind_param("sssssssssdd", $userid, $sector, $category, $idea, $solution_to, $your_solution, $competitors, $last_funding, $revenue, $kuberan_house, $share);
 					$stmt->execute();
 					if ($type == 'entreprenuer') {
-						$stmt = $mysqli->prepare("INSERT INTO history (aadhar_number, fy_year, customer_count, average_billing, revenue, profit) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)");
-						$stmt->bind_param("siiiiisiiiiisiiiii", $aadhar_number, $fy2018['year'], $fy2018['customer_count'], $fy2018['average_billing'], $fy2018['revenue'], $fy2018['profit'], $aadhar_number, $fy2019['year'], $fy2019['customer_count'], $fy2019['average_billing'], $fy2019['revenue'], $fy2019['profit'], $aadhar_number, $fy2020['year'], $fy2020['customer_count'], $fy2020['average_billing'], $fy2020['revenue'], $fy2020['profit']);
+						$stmt = $mysqli->prepare("INSERT INTO history (userid, fy_year, customer_count, average_billing, revenue, profit) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)");
+						$stmt->bind_param("siiiiisiiiiisiiiii", $userid, $fy2018['year'], $fy2018['customer_count'], $fy2018['average_billing'], $fy2018['revenue'], $fy2018['profit'], $userid, $fy2019['year'], $fy2019['customer_count'], $fy2019['average_billing'], $fy2019['revenue'], $fy2019['profit'], $userid, $fy2020['year'], $fy2020['customer_count'], $fy2020['average_billing'], $fy2020['revenue'], $fy2020['profit']);
 						$stmt->execute();						
 					}
-					$stmt = $mysqli->prepare("INSERT INTO extras (aadhar_number, heard_from, part, hold, why) VALUES (?, ?, ?, ?, ?)");
-					$stmt->bind_param("sssss", $aadhar_number, $heard_from, $part, $hold, $why);
+					$stmt = $mysqli->prepare("INSERT INTO extras (userid, heard_from, part, hold, why) VALUES (?, ?, ?, ?, ?)");
+					$stmt->bind_param("sssss", $userid, $heard_from, $part, $hold, $why);
 					$stmt->execute();
 					print_r($_FILES);
 					if ($_FILES['pitchDeck'])
@@ -135,8 +134,8 @@
 					// } else {
 					// 	$img1 = $img2 = $img3 = $img4 = $img5 = null;
 					// }														
-					$stmt = $mysqli->prepare("INSERT INTO attachments (aadhar_number, pitch_deck, video) VALUES (?, ?, ?)");
-					$stmt->bind_param("sss", $aadhar_number, $pitch_deck, $video);
+					$stmt = $mysqli->prepare("INSERT INTO attachments (userid, pitch_deck, video) VALUES (?, ?, ?)");
+					$stmt->bind_param("sss", $userid, $pitch_deck, $video);
 					$stmt->execute();
 					header("Location: ../entreprenuer.html?success=1");
 				}

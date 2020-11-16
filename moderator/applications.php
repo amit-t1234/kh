@@ -167,7 +167,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>aadhar number</th>
+                      <th>User Id </th>
                       <!-- <th>type</th> -->
                       <th>Name</th>
                       <th>Score</th>
@@ -176,7 +176,7 @@
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>aadhar number</th>
+                      <th>User Id</th>
                       <!-- <th>type</th> -->
                       <th>Name</th>
                       <th>Score</th>
@@ -185,14 +185,14 @@
                   </tfoot>
                   <tbody>
                     <?php
-                      $stmt = $mysqli->prepare("SELECT aadhar_number, first_name, last_name, type FROM Users");
+                      $stmt = $mysqli->prepare("SELECT userid, first_name, last_name, type FROM Users");
                       $stmt->execute();
                       $result = $stmt->get_result();
                       while($row = $result->fetch_assoc()) {
 
                     ?>
                       <tr>
-                        <td><?php echo $row['aadhar_number']; ?></td>
+                        <td><?php echo $row['userid']; ?></td>
                         <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
                         <td><input type="number" min="1" max="100" step="0.01" name=""></td>
                       </tr>

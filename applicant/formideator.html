@@ -93,9 +93,6 @@
                                     <label>Second Mobile Number (optional)</label>
                                     <input type="text" name="phone2" id="phone2" pattern="^[6-9]\d{9}$" placeholder="Alternative Mobile Number" /> 
                                     <span class="err" for="phone2"></span>
-                                    <label>Aadhar Card Number</label>
-                                    <input type="number" name="aadhar_number" onfocusout="validate(this)" id="aadhar_number" placeholder="Aadhar Card Number" required />
-                                    <span class="err" for="aadhar_number"></span>
                                     <label>Flat Number</label>
                                     <input type="text" name="flat" onfocusout="validate(this)" placeholder="Flat" />  
                                     <label>Street Name</label>
@@ -104,7 +101,7 @@
                                     <label>Area</label>
                                     <input type="text" name="area" onfocusout="validate(this)" placeholder="Area" />  
                                     <label>City</label>
-                                    <input type="text" name="city" onfocusout="validate(this)" placeholder="City" required />
+                                    <input type="text" name="city" onfocusout="validate(this)" id="city" placeholder="City" required />
                                     <span class="err" for="city"></span>  
                                     <label>State</label>
                                     <input type="text" name="state" onfocusout="validate(this)" id="state" placeholder="State" required />
@@ -329,7 +326,7 @@ $('select[name="hold"]').change(function() {
     }
 });
 
-$('input').each(function (key, input) {
+$('input, textarea').each(function (key, input) {
     if($(input).attr('id'))
         $(input).val(getCookie($(input).attr('id')));
 });
@@ -339,7 +336,7 @@ $(".next").click(function(){
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
     let valid = true;
-    current_fs.find('input').each(function(key, element) {
+    current_fs.find('input, textarea').each(function(key, element) {
       let id = $(element).attr('id');
       if (!$(element).isValid()) {
         valid = false;
