@@ -97,16 +97,21 @@
                                     <label>Second Mobile Number (optional)</label>
                                     <input type="number" name="phone2" id="phone2" placeholder="Alternative Mobile Number" /> 
                                     <span class="err" for="phone2"></span>
-                                    <label>Flat Number</label>
-                                    <input type="text" name="flat" placeholder="Flat" />  
-                                    <label>Street Name</label>
+                                    <label>Flat/Door Number</label>
+                                    <input type="text" id="flat" name="flat" placeholder="Flat" />
+                                    <span class="err" for="flat"></span>                                                                          
+                                    <label>Street/Area Name</label>
                                     <input type="text" name="street" id="street" placeholder="Street" required />  
                                     <span class="err" for="street"></span>
                                     <label>Area</label>
-                                    <input type="text" name="area" placeholder="Area" />  
+                                    <input type="text" id="area" name="area" placeholder="Area" />  
+                                    <span class="err" for="area"></span>                                                                        
                                     <label>City</label>
                                     <input type="text" name="city" placeholder="City" required />
+
                                     <span class="err" for="street"></span>  
+                                    <label>Pin Code</label>
+                                    <input type="number" name="city" onfocusout="validate(this)" placeholder="PIN Code" required />
                                     <label>State</label>
                                     <input type="text" name="state" id="state" placeholder="State" required />
                                     <span class="err" for="state"></span>  
@@ -298,6 +303,8 @@
     </div>
 </div>         
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
+<script src="js/store.js"></script>
 <script>
 function checkFiles(files, total) {       
     if(files.length>total) {
@@ -341,10 +348,54 @@ $('select[name="hold"]').change(function() {
     }
 });
 
+$('input, textarea').each(function (key, input) {
+    if($(input).attr('id'))
+        $(input).val(getCookie($(input).attr('id')));
+});
+
+$('input[name="type"]').change(function() {
+    if ($(this).attr('value') === 'entreprenuer') {
+        $('#title').text('Entreprenuer');
+    } 
+    if ($(this).attr('value') === 'ideator') {
+        $('#title').text('Ideator');
+    }  
+})
+
+$('select[name="part"]').change(function() {
+    if ($(this).val() == 'yes') {
+        $('#part').removeClass('d-none');
+    } else {
+        $('#part').addClass('d-none');
+    }
+});
+
+$('select[name="hold"]').change(function() {
+    if ($(this).val() == 'yes') {
+        $('#hold').removeClass('d-none');
+    } else {
+        $('#hold').addClass('d-none');
+    }
+});
+
 $(".next").click(function(){
 
-current_fs = $(this).parent();
-next_fs = $(this).parent().next();
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+    let valid = true;
+    current_fs.find('input, textarea').each(function(key, element) {
+      let id = $(element).attr('id');
+      if (!$(element).isValid()) {
+        valid = false;
+        console.log($(element));
+        $(`span[for="${id}"]`).text($(element).validMessage());
+      } else {
+        setCookie(id, $(element).val());
+        $(`span[for="${id}"]`).text('');
+      }
+    });
+    console.log(valid);
+    if (!valid) return false;
 
 //Add Class Active
 $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
