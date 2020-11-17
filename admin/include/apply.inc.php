@@ -93,7 +93,7 @@
 		} else {
 			/* Create a prepared statement */
 			try {
-				$stmt = $mysqli->prepare("INSERT INTO Users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				$stmt = $mysqli->prepare("INSERT INTO users (aadhar_number, type, first_name, last_name, dob, gender, email, phone, phone2, apply_for, company_register) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 				$stmt->bind_param("ssssssssssi", $aadhar_number, $type, $first_name, $last_name, $dob, $gender, $email, $phone, $phone2, $apply_for, $company_register);
 				if ($stmt->execute()) {
 					echo $company_name.' '.$nature.' '.$incorporated_on.' '.$founder_count;
@@ -102,7 +102,7 @@
 					echo 'yes yes!';
 					$stmt->execute();
 					foreach($profile_briefs as $profile_brief) {
-						$stmt = $mysqli->prepare("INSERT INTO Profiles (aadhar_number, profile_brief) VALUES (?, ?)");
+						$stmt = $mysqli->prepare("INSERT INTO profiles (aadhar_number, profile_brief) VALUES (?, ?)");
 						$stmt->bind_param("ss", $aadhar_number, $profile_brief);
 						$stmt->execute();
 					}
