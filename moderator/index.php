@@ -88,17 +88,24 @@
                                </tfoot>
                                <tbody>
                                 <?php
-                                  $stmt = $mysqli->prepare("SELECT COUNT(*) AS total_mods FROM moderator");
-                                  $stmt->execute();
+                                  $stmt = $mysqli->prepare("SELECT COUNT(*) AS total_mods FROM moderator WHERE sector=?");
+                                  $stmt->bind_param('s', $_SESSION['sector']);                                  
+                                  $stmt->execute();                                  
                                   $result = $stmt->get_result()->fetch_assoc();
                                   $total_mods = $result['total_mods'];
-                                  $stmt = $mysqli->prepare("SELECT u.userid, type, first_name, last_name, email, phone, phone2, company_name, moderator FROM users u JOIN extras e ON u.userid = e.userid JOIN company c ON u.userid = c.userid JOIN profiles p ON c.userid = p.userid JOIN attachments a ON a.userid = u.userid JOIN business b ON b.userid = u.userid LEFT OUTER JOIN assigned asg ON u.userid = asg.userid AND sector=? ORDER BY created_on ASC");
+                                  $stmt = $mysqli->prepare("SELECT t.row_num FROM (SELECT ROW_NUMBER() OVER (ORDER BY userid) row_num, userid, name, email FROM moderator WHERE sector=?) as t WHERE t.userid = ?");
+                                  $stmt->bind_param('si', $_SESSION['sector'], $_SESSION['userid']);                                  
+                                  $stmt->execute();
+                                  $result = $stmt->get_result()->fetch_assoc();
+                                  $row_num = $result['row_num'];                                  
+                                  $stmt = $mysqli->prepare("SELECT u.userid, type, first_name, last_name, email, phone, phone2, company_name, moderator FROM users u JOIN extras e ON u.userid = e.userid JOIN company c ON u.userid = c.userid JOIN profiles p ON c.userid = p.userid JOIN attachments a ON a.userid = u.userid JOIN business b ON b.userid = u.userid LEFT OUTER JOIN assigned asg ON u.userid = asg.userid WHERE status is NULL AND  sector=?  ORDER BY created_on ASC");
                                   $stmt->bind_param('s', $_SESSION['sector']);                                  
                                   $stmt->execute();
                                   $result = $stmt->get_result();
                                   $i = 0;
                                   while($row = $result->fetch_assoc()) {
-                                    if ($row['type'] == 'ideator' && ($row['moderator'] == $_SESSION['userid'] || ($row['moderator'] == NULL && $i % $total_mods == ($_SESSION['userid'] - 1)))) {
+                                    print_r($row);
+                                    if ($row['type'] == 'ideator' && ($row['moderator'] == $_SESSION['userid'] || ($row['moderator'] == NULL && $i % $total_mods == ($row_num - 1)))) {
                                       if ($row['moderator'] == NULL) {
                                         $stmt = $mysqli->prepare("INSERT INTO assigned (userid, moderator) VALUES (?, ?)");
                                         $stmt->bind_param('ss', $row['userid'], $_SESSION['userid']);
@@ -157,13 +164,18 @@
                                </tfoot>
                                <tbody>
                                 <?php
-                                  $stmt = $mysqli->prepare("SELECT u.userid, type, first_name, last_name, email, phone, phone2, company_name, moderator FROM users u JOIN extras e ON u.userid = e.userid JOIN company c ON u.userid = c.userid JOIN profiles p ON c.userid = p.userid JOIN attachments a ON a.userid = u.userid JOIN business b ON b.userid = u.userid LEFT OUTER JOIN assigned asg ON u.userid = asg.userid AND sector=? ORDER BY created_on ASC");
+                                  $stmt = $mysqli->prepare("SELECT u.userid, type, first_name, last_name, email, phone, phone2, company_name, moderator FROM users u JOIN extras e ON u.userid = e.userid JOIN company c ON u.userid = c.userid JOIN profiles p ON c.userid = p.userid JOIN attachments a ON a.userid = u.userid JOIN business b ON b.userid = u.userid LEFT OUTER JOIN assigned asg ON u.userid = asg.userid WHERE status is NULL AND  sector=? ORDER BY created_on ASC");
                                   $stmt->bind_param('s', $_SESSION['sector']);                                  
                                   $stmt->execute();
                                   $result = $stmt->get_result();
                                   $i = 0;
                                   while($row = $result->fetch_assoc()) {
-                                    if ($row['type'] == 'entreprenuer' && ($row['moderator'] == $_SESSION['userid'] || ($row['moderator'] == NULL && $i % $total_mods == ($_SESSION['userid'] - 1)))) {
+                                    print_r($row['moderator']);
+                                    print_r($_SESSION['userid']);
+                                    print_r($total_mods);
+                                    if ($row['type'] == 'entreprenuer' && ($row['moderator'] == $_SESSION['userid'] || ($row['moderator'] == NULL && $i % $total_mods == ($row_num - 1)))) {
+                                                                            print_r($row);
+
                                       if ($row['moderator'] == NULL) {
                                         $stmt = $mysqli->prepare("INSERT INTO assigned (userid, moderator) VALUES (?, ?)");
                                         $stmt->bind_param('ss', $row['userid'], $_SESSION['userid']);
@@ -231,7 +243,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="include/logout.inc.php">Logout</a>
         </div>
       </div>
     </div>

@@ -1,3 +1,7 @@
+ <?php 
+    if (!isset($_SESSION['userid']))
+      header('Location: login.php');
+  ?>
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

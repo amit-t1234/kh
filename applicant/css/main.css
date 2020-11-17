@@ -9,7 +9,7 @@
     font-size: 0.7rem;
 }
 label{
-    color: #e6b632;
+    color: #150204;
 }
 .heading-style{
     font-family: 'The Wanters DEMO';
@@ -77,7 +77,7 @@ html {
 
 #msform input,
 #msform textarea {
-    padding: 0px 8px 4px 8px;
+    padding: 0px;
     border: none;
     border-bottom: 1px solid #ccc;
     border-radius: 0px;
@@ -91,6 +91,11 @@ html {
     letter-spacing: 1px
 }
 
+#msform textarea {
+    border: 1px solid #ccc;
+
+}
+
 #msform input:focus,
 #msform textarea:focus {
     -moz-box-shadow: none !important;
@@ -100,6 +105,10 @@ html {
     font-weight: bold;
     border-bottom: 2px solid #e6b632;
     outline-width: 0
+}
+
+#msform textarea:focus {
+    border: 2px solid #e6b632;
 }
 
 #msform .action-button {
@@ -183,22 +192,22 @@ select.list-dt:focus {
 
 #progressbar #account:before {
     font-family: FontAwesome;
-    content: "\f023"
+    content: "\f007"
 }
 
 #progressbar #personal:before {
     font-family: FontAwesome;
-    content: "\f007"
+    content: "\f0eb"
 }
 
 #progressbar #payment:before {
     font-family: FontAwesome;
-    content: "\f09d"
+    content: "\f129"
 }
 
 #progressbar #confirm:before {
     font-family: FontAwesome;
-    content: "\f00c"
+    content: "\f0c6"
 }
 
 #progressbar li:before {

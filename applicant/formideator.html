@@ -105,7 +105,8 @@
                                     <input type="text" name="city" onfocusout="validate(this)" id="city" placeholder="City" required />
                                     <span class="err" for="city"></span>                                      
                                     <label>Pin Code</label>
-                                    <input type="number" name="zip" onfocusout="validate(this)" placeholder="PIN Code" required />
+                                    <input type="number" name="zip" id="zip" onfocusout="validate(this)" placeholder="PIN Code" required />
+                                    <span class="err" for="zip"></span>                                                                          
                                     <label>State</label>
                                     <input type="text" name="state" onfocusout="validate(this)" id="state" placeholder="State" required />
                                     <span class="err" for="state"></span>  
@@ -117,7 +118,7 @@
                                         <option value="employer">EMPLOYER</option>
                                         <option value="friend"> FRIEND</option>
                                         <option value="family">FAMILY</option>
-                                        <option value="other"> OTHER</option>
+                                        <option value="other"> Others</option>
                                     </select><br><br>
                                     <label>Company Name</label>
                                     <input type="text" name="company_name" onfocusout="validate(this)" id="company_name" placeholder="Company Name" pattern="[A-Za-z]+" required />
@@ -161,6 +162,7 @@
                                         <option value="Consumer">CONSUMER</option>
                                         <option value="Education">EDUCATION</option>
                                         <option value="Hardware">HARDWARE</option>
+                                        <option value="Hardware">HOSPITALITY</option>
                                         <option value="Food"> FOOD</option>
                                         <option value="Fashion">FASHION</option>
                                         <option value="Fintech">FINTECH</option>
@@ -173,7 +175,7 @@
                                         <option value="Tech / Software">TECH/SOFTWARE</option>
                                         <option value="Retail">RETAIL</option>
                                         <option value="Automation">AUTOMATION</option>
-                                        <option value="Others">OTHERS</option>
+                                        <option value="Others">Others</option>
                                     </select><br><br>
                                     <label>Business Category</label><br>
                                     <select name="category">
@@ -181,7 +183,7 @@
                                         <option value="B2C">B2C( Selling Products & services directly to consumers/End users)</option>
                                         <option value="B2B2C">B2B2C ( Both of the Above)</option>
                                         <option value="D2C">D2C ( Direct to Customer)</option>
-                                        <option value="other">OTHER</option>
+                                        <option value="other">Others</option>
                                     </select><br><br>
                                     <label>Define Your Idea</label>
                                     <textarea type="text" name="idea" onfocusout="validate(this)" id="idea" placeholder="Idea (100 Words)" pattern="[A-Za-z]+" maxlength="100" required></textarea>
@@ -212,7 +214,7 @@
                                     <label>Funding Needed</label>
                                       <input type="number" name="kuberan_house" onfocusout="validate(this)" id="kuberan_house" placeholder="Funding needed from Kuberan House" required/>
                                       <span class="err" for="kuberan_house"></span> 
-                                      <label>Share Ratio Offered</label> 
+                                      <label>Share Ratio Offered (in %)</label> 
                                       <input type="number" name="share" onfocusout="validate(this)" id="share" placeholder="Share Ratio Offered" required />
                                       <span class="err" for="share"></span>    
 
@@ -248,6 +250,7 @@
                                     <input type="file" name="video" placeholder="Video"/>
                                     <label>Business Images (upto 5 Images)</label>
                                     <input type="file" name="images[]" onchange="checkFiles(this.files, 5)" placeholder="Business Images" id="business_img" multiple="multiple" />
+                                    <br><br>
                                     <label>  Why you should be shortlisted</label>
                                     <textarea type="text" name="why" placeholder="Define in 100 Words"></textarea><br>
                                     <input style="width: 26px;" type="checkbox" />Terms and Conditions<br>

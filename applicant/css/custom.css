@@ -156,6 +156,7 @@ body{
 }
 .banner_right img {
 	width: 100%;
+	margin-bottom: 20px;
 }
 .investors span {
 	display: block;

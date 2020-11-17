@@ -238,11 +238,7 @@
                                </tfoot>
                                <tbody>
                                 <?php
-                                  $stmt = $mysqli->prepare("SELECT COUNT(*) AS total_mods FROM moderator");
-                                  $stmt->execute();
-                                  $result = $stmt->get_result()->fetch_assoc();
-                                  $total_mods = $result['total_mods'];
-                                  $stmt = $mysqli->prepare("SELECT u.userid, type, first_name, last_name, dob, gender, email, phone, phone2, company_name, nature, incorporated_on, founders_count, pitch_deck, aadhar_img, video, img1, img2, img3, img4, img5, sector, category, idea, solution_to, your_solution, competitors, last_funding, revenue, kuberan_house, share, moderator FROM users u JOIN extras e ON u.userid = e.userid JOIN company c ON u.userid = c.userid JOIN profiles p ON c.userid = p.userid JOIN attachments a ON a.userid = u.userid JOIN business b ON b.userid = u.userid LEFT OUTER JOIN assigned asg ON u.userid = asg.userid AND sector=? ORDER BY created_on ASC");
+                                  $stmt = $mysqli->prepare("SELECT u.userid, type, first_name, last_name, dob, gender, email, phone, phone2, company_name, nature, incorporated_on, founders_count, pitch_deck, aadhar_img, video, img1, img2, img3, img4, img5, sector, category, idea, solution_to, your_solution, competitors, last_funding, revenue, kuberan_house, share, moderator FROM users u JOIN extras e ON u.userid = e.userid AND status is NULL JOIN company c ON u.userid = c.userid JOIN profiles p ON c.userid = p.userid JOIN attachments a ON a.userid = u.userid JOIN business b ON b.userid = u.userid LEFT OUTER JOIN assigned asg ON u.userid = asg.userid AND sector=? ORDER BY created_on ASC");
                                   $stmt->bind_param('s', $_SESSION['sector']);                                  
                                   $stmt->execute();
                                   $result = $stmt->get_result();

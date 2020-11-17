@@ -50,7 +50,45 @@ owl5.owlCarousel({
 });
 </script>
 <!--Owl Carousel-->
+<style type="text/css">
+  .our_sponsors li span {
+    margin-left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;    
+  }
+  .btn.apply_nav::after {
+    content: none;
+  }
 
+  .sponsers ul {
+  overflow-y: scroll;
+  scrollbar-color: #90A4AE #CFD8DC;
+  scrollbar-width: thin;
+}
+
+  .sponsers ul {
+    max-height: 445px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .sponsers ul::-webkit-scrollbar-track
+  {
+      background-color: #CFD8DC;
+  }
+
+  .sponsers ul::-webkit-scrollbar
+  {
+      width: 8px;
+      background-color: #F5F5F5;
+  }
+
+  .sponsers ul::-webkit-scrollbar-thumb
+  {
+      background-color: #90A4AE;
+      border-radius: 3px;
+  }  
+</style>
 </head>
 
 <body class="wid_bg">
@@ -81,7 +119,7 @@ owl5.owlCarousel({
 <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. </p>
  
 <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero,sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel,</p> 
- 
+ <a class="btn btn-lg apply_nav" href="choose.html">Apply Your Dream</a>
 </div>
 <section class="our_sponsors">
 <div class="sponsers">

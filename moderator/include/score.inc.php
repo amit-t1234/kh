@@ -4,6 +4,17 @@
 	if (isset($_POST['submit'])) {
 		
 		include_once 'dbh.inc.php';
+		$temp = $_POST['track'];
+		if ($_POST['submit'] == 'escalate') {
+			$stmt = $mysqli->prepare('UPDATE users SET status=2 WHERE userid=?');
+		    $stmt->bind_param('s', $_POST['track']);
+		    if ($stmt->execute()) {
+				header("Location: ../application.php?userid=".$temp."&success=0");
+		    } else {
+		    	header("Location: ../application.php?userid=".$temp."&success=1");
+		    }
+		    exit();		    
+		}
 		$select = "";
 		$params = array();	
 		$sum = 0;
@@ -28,7 +39,6 @@
 			$mysqli->query("BEGIN;");
 			$failed = false;
 			$stmt1 = $mysqli->prepare("DELETE FROM score WHERE track = ?");
-			$temp = $_POST['track'];
 			$stmt1->bind_param("s", $temp);
 			if (!$stmt1->execute()) {
 			    $failed = true;

@@ -107,11 +107,11 @@
                                     <input type="text" id="area" name="area" placeholder="Area" />  
                                     <span class="err" for="area"></span>                                                                        
                                     <label>City</label>
-                                    <input type="text" name="city" placeholder="City" required />
-
-                                    <span class="err" for="street"></span>  
+                                    <input type="text" id="city" name="city" placeholder="City" required />
+                                    <span class="err" for="city"></span>  
                                     <label>Pin Code</label>
-                                    <input type="number" name="city" onfocusout="validate(this)" placeholder="PIN Code" required />
+                                    <input type="number" name="zip" id="zip" onfocusout="validate(this)" placeholder="PIN Code" required />
+                                    <span class="err" for="zip"></span> 
                                     <label>State</label>
                                     <input type="text" name="state" id="state" placeholder="State" required />
                                     <span class="err" for="state"></span>  
@@ -317,6 +317,25 @@ function checkFiles(files, total) {
         document.getElementById('business_img').files = list.files
     }       
 }
+
+function validate(element) {
+    let id = $(element).attr('id');
+    if (!$(element).isValid()) {
+        valid = false;
+        $(`span[for="${id}"]`).text($(element).validMessage());
+    } else {
+        $(`span[for="${id}"]`).text('');
+    }
+}
+
+$.fn.isValid = function(){
+  return this[0].checkValidity()
+}
+
+$.fn.validMessage = function() {
+    return this[0].validationMessage;
+}
+
 
 $(document).ready(function(){
 
